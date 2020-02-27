@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  height: 800px;
+  max-width: 100%;
 }
 
 .App-logo {
@@ -35,4 +37,139 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/*######### NAVIGATION ########*/
+
+#navigation {
+  width: 100%;  
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 6px 5px -6px #7d695f;
+	-moz-box-shadow: 0 6px 5px -6px #7d695f;
+	box-shadow: 0 6px 5px -6px #7d695f;
+  height: 120px;
+  display: flex;
+}
+
+#logoWrap{
+  width: 30%;
+}
+
+#logopic{
+  height: 80px;
+}
+
+#navBar {
+  width: 100px;
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+
+#logoWrap{
+  width: 30%;
+}
+
+#navBtn {
+  margin-left: 1100px; 
+  margin-bottom: 20px;
+  margin-top: 40px;
+  width: 70%;
+}
+
+#navBtns{
+  margin: 10px;
+}
+
+@media only screen and (max-width: 1400px){
+  #navBtn {
+    margin-left: 950px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 1290px){
+  #navBtn {
+    margin-left: 800px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 1090px){
+  #navBtn {
+    margin-left: 700px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 990px){
+  #navBtn {
+    margin-left: 600px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 890px){
+  #navBtn {
+    margin-left: 500px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 800px){
+  #navBtn {
+    margin-left: 450px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 70%;
+  }
+
+}
+
+@media only screen and (max-width: 740px){
+  #navBtn {
+    margin-left: 350px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 70%;
+  }
+
+}
+
+@media only screen and (max-width: 640px){
+  #navBtn {
+    margin-left: 300px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 70%;
+  }
+
+}
+
+
+@media only screen and (max-width: 580px){
+  #navBtn {
+    margin-left: 200px; 
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 70%;
+  }
+
 }
