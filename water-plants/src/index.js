@@ -10,6 +10,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import App from './App';
 
+// UI Library Antd
+
+import 'antd/dist/antd.css';
+
 
 const rootElement = document.getElementById('root');
 
@@ -19,5 +23,5 @@ ReactDOM.render(
     <Router>
         <App />
     </Router>,
-    document.getElementById("root")
+    rootElement
 );
