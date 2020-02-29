@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import Header from './Header.js';
+
+
 import styled from "styled-components";
 
 
@@ -11,7 +12,7 @@ const StyledFieldset = styled.fieldset`
   margin: 0 auto;
   background-color: white;
   padding-top: 0;
-  margin-top:10%;
+  margin-top: 8%;
   margin-bottom: 10%;
   padding-left: 0%;
   padding-right: 0;
@@ -19,12 +20,19 @@ const StyledFieldset = styled.fieldset`
 
 
 const StyledH2 = styled.h2`
-    color: #198974
-    font-size: 18px;
+   color: rgb(11, 139, 139);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  font-family: "Roboto";
+  margin-top: 20px;
+  text-align: center;
 `;
 
 const StyledP = styled.p`
   font-size: 12px;
+  margin-left: 20px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 `;
 
 const StyledInputDiv = styled.div`
@@ -54,7 +62,8 @@ const StyledButton = styled.button`
   background-color: #97C6A5;
   color: black;
   border-radius: 2px;
-  margin-bottom: 2%;
+  margin-bottom: 10px;
+  margin-left: 80px;
   font-size: 15px;
 `;
 
@@ -96,7 +105,7 @@ const Register = props => {
             {/* <form onSubmit={event => handleSubmit(event)}> */}
             <form onSubmit={handleSubmit}>
                 <StyledFieldset>
-                    <Header />
+                    
                     <StyledH2>Sign up</StyledH2>
                     <StyledInputDiv>
                         <StyledLabel>Name</StyledLabel>
@@ -119,7 +128,7 @@ const Register = props => {
                         />
                     </StyledInputDiv>
 
-                    <StyledInputDiv>
+                    {/* <StyledInputDiv>
                         <StyledLabel>Phone number</StyledLabel>
                         <StyledInput
                             type="phone number"
@@ -127,12 +136,13 @@ const Register = props => {
                             value={newUser.phone}
                             onChange={handleChange}
                         />
-                    </StyledInputDiv>
+                    </StyledInputDiv> */}
+                    
                     <StyledButton>Sign Up</StyledButton>
 
                     <RegisterFooterDiv>
                         <input type="checkbox" />
-                        <StyledP>I accept terms of service available here.</StyledP>
+                        <StyledP> I accept terms of service available here.</StyledP>
                     </RegisterFooterDiv>
                     <div>
                         <StyledP>

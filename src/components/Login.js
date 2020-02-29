@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import Header from "./Header.js";
+import { Link, withRouter } from 'react-router-dom';
+
+
 import styled from "styled-components";
+
+// redux 
+import login from '../store/actions/';
+import {connect} from 'react-redux';
+
 
 
 const LoginCard = styled.div`
@@ -37,7 +43,7 @@ const EmailAndPassword = styled.div`
 const StyledSignInButton = styled.button`
   width: 65%;
   font-family: "Roboto";
-  color: #7D695F;
+  color: #000000;
   border-radius: 3px;
   font-size: 1rem;
   background: #97C6A5;
@@ -45,6 +51,7 @@ const StyledSignInButton = styled.button`
   border: none;
   cursor: pointer;
   margin-bottom: 20px;
+  margin-left: 60px;
 `;
 
 const BottomSignIn = styled.div`
@@ -83,17 +90,16 @@ const Need = styled.p`
 `;
 
 
-const Login = props => {
+const Login = (props) => {
     const [signIn, setSignIn] = useState({
         username: "",
         password: ""
     });
 
-    function submitHandler(event) {
-        event.preventDefault();
-        console.log("sign in in handle", signIn);
-        // setSignIn(signIn);
-        props.postLogin(signIn).then(() => props.history.push("/"));
+    const submitHandler = (event) => {
+      event.preventDefault();
+      login(signIn, props.history);
+    
     }
 
     function changeHandler(event) {
@@ -147,5 +153,12 @@ const Login = props => {
     );
 };
 
-export default Login;
+const mapStateToProps = state => ({
+  loginError: state.loginError
+});
+
+export default connect(
+  mapStateToProps,
+  {login}
+)(withRouter(Login));
 
