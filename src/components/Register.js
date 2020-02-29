@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+
+import { registerUser } from '../store/actions/index';
 
 import styled from "styled-components";
-
+import { useHistory } from 'react-router-dom';
 
 const StyledFieldset = styled.fieldset`
   border-radius: 4px;
@@ -77,28 +80,33 @@ const RegisterFooterDiv = styled.div`
 `;
 
 
-const Register = props => {
-    console.log("props in register", props);
-    const [newUser, setNewUser] = useState({
+const Register = () => {
+    // console.log("props in register", props);
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const [user, setUser] = useState({
         username: "",
-        email: "",
-        password: "",
-        phone: ""
+        password: ""
     });
 
-    function handleSubmit(event) {
-        console.log("NewUser in handle", newUser);
+    const handleSubmit = (event) => {
+        console.log("NewUser in handle", user);
         event.preventDefault();
-        //
-        // setNewUser(newUser);
-        props.postRegister(newUser).then(() => props.history.push("/login"));
+        dispatch(registerUser(user));
+        setUser({
+            username: '',
+            password: ''
+        })
+        console.log(user)
+        history.push('/dashboard')
+       
     }
 
-    function handleChange(event) {
-        const updatedUser = { ...newUser, [event.target.name]: event.target.value };
-        console.log("user", event.target.name, event.target.value, updatedUser);
-        setNewUser(updatedUser);
-    }
+    const handleChange = (event) => {
+       event.preventDefault();
+       setUser({...user, [event.target.name]: event.target.value });
+    };
 
     return (
         <div>
@@ -112,7 +120,7 @@ const Register = props => {
                         <StyledInput
                             type="text"
                             name="username"
-                            value={newUser.username}
+                            value={user.username}
                             onChange={handleChange}
                         />
                     </StyledInputDiv>
@@ -123,7 +131,7 @@ const Register = props => {
                         <StyledInput
                             type="password"
                             name="password"
-                            value={newUser.password}
+                            value={user.password}
                             onChange={handleChange}
                         />
                     </StyledInputDiv>
@@ -137,7 +145,7 @@ const Register = props => {
                             onChange={handleChange}
                         />
                     </StyledInputDiv> */}
-                    
+
                     <StyledButton>Sign Up</StyledButton>
 
                     <RegisterFooterDiv>

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { useDispatch} from 'react-redux';
+import { Link  } from 'react-router-dom';
 
+import { useHistory } from 'react-router-dom';
 
 import styled from "styled-components";
 
 // redux 
-import login from '../store/actions/';
-import {connect} from 'react-redux';
+import { loginUser } from '../store/actions/index';
+
+
 
 
 
@@ -91,6 +94,10 @@ const Need = styled.p`
 
 
 const Login = (props) => {
+  const dispatch = useDispatch();
+
+  const history = useHistory();
+
     const [signIn, setSignIn] = useState({
         username: "",
         password: ""
@@ -98,13 +105,17 @@ const Login = (props) => {
 
     const submitHandler = (event) => {
       event.preventDefault();
-      login(signIn, props.history);
-    
+      dispatch(loginUser(signIn, props));
+      setSignIn({
+        username:'',
+        password: '',
+      })
+      history.push('/dashboard');
     }
 
-    function changeHandler(event) {
-        console.log(signIn);
-        setSignIn({ ...signIn, [event.target.name]: event.target.value });
+    const changeHandler = (event) => {
+      console.log(signIn);
+      setSignIn({ ...signIn, [event.target.name]: event.target.value });
     }
 
     return (
@@ -153,12 +164,7 @@ const Login = (props) => {
     );
 };
 
-const mapStateToProps = state => ({
-  loginError: state.loginError
-});
 
-export default connect(
-  mapStateToProps,
-  {login}
-)(withRouter(Login));
+
+export default Login;
 

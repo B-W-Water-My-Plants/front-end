@@ -10,20 +10,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import thunk from "redux-thunk";
 
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware } from "redux";
 //Redux - Store
 import { Provider } from 'react-redux';
 // Reducers
-import reducer from "./store/reducers";
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import {reducer} from "./store/reducers/index";
 
 
-const store = createStore(
-    reducer,
-    composeEnhancers(applyMiddleware(thunk))
-);
-
+const store = createStore(reducer, applyMiddleware(thunk))
 
 const rootElement = document.getElementById('root');
 

@@ -2,39 +2,57 @@ import {
     LOGIN_START,
     LOGIN_SUCCESS,
     LOGIN_ERROR,
+    REGISTER_START,
+    REGISTER_SUCCESS,
+    REGISTER_ERROR,
     LOGOUT
-} from '../actions';
+} from '../actions/index';
 
 const initialState = {
-    token: null,
-    user: null,
-    loginStart: false,
-    loginError: false,
+    user: [],
+    plantList:[],
+    
+   
 };
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch(action.type){
 
         case LOGIN_START:
             return {
             ...state,
-            loginStart: true
+            errorMessage: ""
         };
 
         case LOGIN_SUCCESS:
             return {
             ...state, 
-            loginStart: false,
-            token: action.payload.token,
-            user: action.payload.id
+            user: action.payload
         };
 
         case LOGIN_ERROR:
             return {
             ...state,
-            loginStart:false,
-            loginError: true
+            
         };
+        
+        case REGISTER_START:
+            return {
+              ...state,
+    
+            };
+      
+          case REGISTER_SUCCESS:
+            return {
+              ...state,
+              user: action.payload,
+            };
+      
+          case REGISTER_ERROR:
+            return {
+              ...state,
+        
+            };
 
         case LOGOUT:
             return {
@@ -47,5 +65,3 @@ const reducer = (state = initialState, action) => {
 
     }
 };
-
-export default reducer;
