@@ -1,3 +1,7 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Roboto&display=swap');
+
+
 .App {
   text-align: center;
   height: 800px;
@@ -57,7 +61,8 @@
 }
 
 #logopic{
-  height: 80px;
+  height: 70px;
+  margin-left: 20px;
 }
 
 #navBar {
