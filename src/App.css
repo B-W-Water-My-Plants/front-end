@@ -54,6 +54,7 @@
 	box-shadow: 0 6px 5px -6px #7d695f;
   height: 120px;
   display: flex;
+  
 }
 
 #logoWrap{
@@ -75,106 +76,138 @@
 
 #logoWrap{
   width: 30%;
+  margin: auto;
 }
 
 #navBtn {
-  margin-left: 1100px; 
-  margin-bottom: 20px;
-  margin-top: 40px;
-  width: 70%;
+  padding-left: 200px;
+  padding-top: 30px;
+  width: 30%;
 }
 
 #navBtns{
   margin: 10px;
 }
 
+.header {
+  width: 30%;
+  margin: auto;
+
+}
+
+#H1SignIn {
+  text-align: center;
+  font-family: Amatic SC;
+  font-size: 44px;
+}
+
 @media only screen and (max-width: 1400px){
   #navBtn {
-    margin-left: 950px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 1290px){
   #navBtn {
-    margin-left: 800px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 1090px){
   #navBtn {
-    margin-left: 700px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 990px){
   #navBtn {
-    margin-left: 600px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 890px){
   #navBtn {
-    margin-left: 500px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
+  }
+
+  #H1SignIn {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 34px;
   }
 
 }
 
 @media only screen and (max-width: 800px){
   #navBtn {
-    margin-left: 450px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 740px){
   #navBtn {
-    margin-left: 350px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 60px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 640px){
   #navBtn {
-    margin-left: 300px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 60px;
+    padding-top: 30px;
+    padding-right: 10px;
+    width: 30%;
   }
+
+  #navBtns{
+    margin: 1px;
+  }
+
+  #H1SignIn {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 28px;
+  }
+
 
 }
 
 
 @media only screen and (max-width: 580px){
   #navBtn {
-    margin-left: 200px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-right: 10px;
+    width: 30%;
+  }
+
+  #navBtns{
+    margin: 1px;
+  }
+
+  #H1SignIn {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 30px;
   }
 
 }

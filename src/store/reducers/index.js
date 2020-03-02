@@ -5,14 +5,13 @@ import {
     REGISTER_START,
     REGISTER_SUCCESS,
     REGISTER_ERROR,
-    LOGOUT
 } from '../actions/index';
 
 const initialState = {
-    user: [],
-    plantList:[],
-    
-   
+  token: null,
+  user: [],
+  plantList:[],
+
 };
 
 export const reducer = (state = initialState, action) => {
@@ -21,13 +20,13 @@ export const reducer = (state = initialState, action) => {
         case LOGIN_START:
             return {
             ...state,
-            errorMessage: ""
         };
 
         case LOGIN_SUCCESS:
             return {
             ...state, 
-            user: action.payload
+            user: action.payload,
+            token: action.payload.token
         };
 
         case LOGIN_ERROR:
@@ -54,11 +53,11 @@ export const reducer = (state = initialState, action) => {
         
             };
 
-        case LOGOUT:
-            return {
-            ...state,
-            token: null
-        };
+        // case LOGOUT:
+        //     return {
+        //     ...state,
+        //     token: null
+        // };
 
         default:
         return state;
