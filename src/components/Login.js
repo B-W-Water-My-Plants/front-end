@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch} from 'react-redux';
 import { Link  } from 'react-router-dom';
 
-import { useHistory } from 'react-router-dom';
 
 import styled from "styled-components";
 
@@ -94,10 +93,10 @@ const Need = styled.p`
 `;
 
 
-const Login = (props) => {
+const Login = props => {
   const dispatch = useDispatch();
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const [signIn, setSignIn] = useState({
       username: "",
@@ -106,12 +105,13 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    dispatch(loginUser(signIn));
+    dispatch(loginUser(signIn,props));
     setSignIn({
       username:'',
       password: '',
     })
-    history.push('/dashboard');
+    props.history.push('/dashboard');
+    
   }
 
   const changeHandler = (event) => {
