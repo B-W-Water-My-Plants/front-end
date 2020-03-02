@@ -41,10 +41,33 @@ export const registerUser = (user) => dispatch => {
     dispatch({type: REGISTER_ERROR }))
 }
 
-// export const LOGOUT = 'LOGOUT'
 
-// export const logout = () => dispatch => {
-//     dispatch({ type: LOGOUT})
-//     localStorage.removeItem("token")
-    
-// }
+export const GET_PLANTS_REQUEST = "GET_PLANTS_REQUEST";
+export const GET_PLANTS_SUCCESS = "GET_PLANTS_SUCCESS";
+export const GET_PLANTS_FAILURE = "GET_PLANTS_FAILURE";
+
+export const getPlants = () => {
+    // dispatch({type: GET_PLANTS_REQUEST});
+
+
+}
+
+
+export const ADD_PLANT_REQUEST = "ADD_PLANT_REQUEST";
+export const ADD_PLANT_SUCCESS = "ADD_PLANT_SUCCESS";
+export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
+
+export const addPlant = () => {
+    // dispatch({type: ADD_PLANT_REQUEST});
+}
+
+
+
+export const DELETE_PLANT_REQUEST = "DELETE_PLANT_REQUEST";
+export const DELETE_PLANT_SUCCESS = "DELETE_PLANT_SUCCESS";
+export const DELETE_PLANT_FAILURE = "DELETE_PLANT_FAILURE";
+
+export const deletePlant = () => {
+    // dispatch({type: DELETE_PLANT_REQUEST});
+}
+

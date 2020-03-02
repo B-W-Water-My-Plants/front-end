@@ -5,6 +5,15 @@ import {
     REGISTER_START,
     REGISTER_SUCCESS,
     REGISTER_ERROR,
+    GET_PLANTS_REQUEST,
+    GET_PLANTS_SUCCESS,
+    GET_PLANTS_FAILURE,
+    ADD_PLANT_REQUEST,
+    ADD_PLANT_SUCCESS,
+    ADD_PLANT_FAILURE,
+    DELETE_PLANT_REQUEST,
+    DELETE_PLANT_SUCCESS,
+    DELETE_PLANT_FAILURE
 } from '../actions/index';
 
 const initialState = {
@@ -17,6 +26,7 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch(action.type){
 
+      // LOGIN EXISTING USER
         case LOGIN_START:
             return {
             ...state,
@@ -35,6 +45,7 @@ export const reducer = (state = initialState, action) => {
             
         };
         
+        // REGISTER NEW USER
         case REGISTER_START:
             return {
               ...state,
@@ -53,12 +64,49 @@ export const reducer = (state = initialState, action) => {
         
             };
 
-        // case LOGOUT:
-        //     return {
-        //     ...state,
-        //     token: null
-        // };
+            //GET PLANT LIST
+            case GET_PLANTS_REQUEST:
+              return {
+                ...state,
+              };
 
+            case GET_PLANTS_SUCCESS:
+              return {
+                ...state,
+              };
+
+            case GET_PLANTS_FAILURE:
+              return {
+                ...state
+              }
+              
+              // ADD NEW PLANT
+              case ADD_PLANT_SUCCESS:
+                return {
+                  ...state,
+                };
+              case ADD_PLANT_REQUEST:
+                return {
+                  ...state,
+                };
+              case ADD_PLANT_FAILURE:
+                return {
+                  ...state,
+                };
+                
+                // DELETE PLANT
+                case DELETE_PLANT_REQUEST:
+                  return {
+                    ...state,
+                  }
+                case DELETE_PLANT_SUCCESS:
+                  return {
+                    ...state,
+                  }
+                case DELETE_PLANT_FAILURE:
+                  return {
+                    ...state,
+                  }
         default:
         return state;
 

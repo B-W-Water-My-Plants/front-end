@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { useHistory } from 'react-router-dom';
 
 //Components
-import Header from './Header';
+
 
 const StyledFieldset = styled.fieldset`
   border-radius: 4px;
