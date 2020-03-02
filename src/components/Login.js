@@ -9,6 +9,7 @@ import styled from "styled-components";
 // redux 
 import { loginUser } from '../store/actions/index';
 
+//Components
 
 
 
@@ -98,27 +99,29 @@ const Login = (props) => {
 
   const history = useHistory();
 
-    const [signIn, setSignIn] = useState({
-        username: "",
-        password: ""
-    });
+  const [signIn, setSignIn] = useState({
+      username: "",
+       password: ""
+  });
 
-    const submitHandler = (event) => {
-      event.preventDefault();
-      dispatch(loginUser(signIn, props));
-      setSignIn({
-        username:'',
-        password: '',
-      })
-      history.push('/dashboard');
-    }
+  const submitHandler = (event) => {
+    event.preventDefault();
+    dispatch(loginUser(signIn));
+    setSignIn({
+      username:'',
+      password: '',
+    })
+    history.push('/dashboard');
+  }
 
-    const changeHandler = (event) => {
-      console.log(signIn);
-      setSignIn({ ...signIn, [event.target.name]: event.target.value });
-    }
+  const changeHandler = (event) => {
+    console.log(signIn);
+    setSignIn({ ...signIn, [event.target.name]: event.target.value });
+  }
 
-    return (
+  return (
+    <>
+      {/* <Header /> */}
         <LoginCard>
             
             <form onSubmit={submitHandler}>
@@ -154,13 +157,14 @@ const Login = (props) => {
                     <Forgot>Forgot your password?</Forgot>
                     <br />
                 </EmailAndPassword>
-                <StyledSignInButton type="submit">Sign In</StyledSignInButton>
+                <StyledSignInButton>Sign In</StyledSignInButton>
             </form>
             <BottomSignIn>
                 <Need>Need an account?</Need>
                 <SignUp><Link to='/signup'>Sign up</Link></SignUp>
             </BottomSignIn>
         </LoginCard>
+        </>
     );
 };
 

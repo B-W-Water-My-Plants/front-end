@@ -8,6 +8,9 @@ import { registerUser } from '../store/actions/index';
 import styled from "styled-components";
 import { useHistory } from 'react-router-dom';
 
+//Components
+
+
 const StyledFieldset = styled.fieldset`
   border-radius: 4px;
   border: 0 solid white;
@@ -111,6 +114,7 @@ const Register = () => {
     return (
         <div>
             {/* <form onSubmit={event => handleSubmit(event)}> */}
+            {/* <Header /> */}
             <form onSubmit={handleSubmit}>
                 <StyledFieldset>
                     

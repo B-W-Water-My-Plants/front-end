@@ -50,10 +50,11 @@
   width: 100%;  
   background-color: #ffffff;
   -webkit-box-shadow: 0 6px 5px -6px #7d695f;
-	-moz-box-shadow: 0 6px 5px -6px #7d695f;
-	box-shadow: 0 6px 5px -6px #7d695f;
-  height: 120px;
+	-moz-box-shadow: 0 9px 5px -6px #7d695f;
+	box-shadow: 0 9px 5px -6px #7d695f;
+  height: 100px;
   display: flex;
+  
 }
 
 #logoWrap{
@@ -75,106 +76,259 @@
 
 #logoWrap{
   width: 30%;
+  margin: auto;
 }
 
 #navBtn {
-  margin-left: 1100px; 
-  margin-bottom: 20px;
-  margin-top: 40px;
-  width: 70%;
+  padding-left: 200px;
+  padding-top: 30px;
+  width: 30%;
 }
 
 #navBtns{
   margin: 10px;
 }
 
+.header {
+  width: 30%;
+  margin: auto;
+
+}
+
+#H1SignIn {
+  text-align: center;
+  font-family: Amatic SC;
+  font-size: 44px;
+}
+
+/* DRAWER IN DASHBOARD */
+
+#dashBg{
+  background-color: rgb(240, 240, 240);
+  height: 800px;
+}
+
+.drawer {
+  background-color: rgba(151, 198, 165, 0.6);
+  width: 200px;
+  height: 500px;
+}
+
+.drawerBtn{
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.addHeader{
+  text-align: center;
+  margin-top: 1%;
+
+}
+
+/* HAMBURGERRRRR */
+
+#page-nav {
+  width: 100%;
+  background-color: rgba(151, 198, 165, 0.8);
+  height: 50px;
+  
+  /* If you want the navigation bar to stick on top
+  position: sticky;
+  top: 0;
+  */
+}
+
+.hamBtn{
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-family: 'Roboto';
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+
+/* Hide Hamburger */
+#page-nav label, #hamburger {
+  display: none;
+}
+
+/* Menu Items */
+#page-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+  text-align: center;
+}
+#page-nav ul li {
+  display: inline-block;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#page-nav ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+
+
+/* HAMBURGERRRRR */
+
 @media only screen and (max-width: 1400px){
   #navBtn {
-    margin-left: 950px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
+ 
 
 }
 
 @media only screen and (max-width: 1290px){
   #navBtn {
-    margin-left: 800px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 1090px){
   #navBtn {
-    margin-left: 700px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 990px){
   #navBtn {
-    margin-left: 600px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
+  
 
 }
 
 @media only screen and (max-width: 890px){
   #navBtn {
-    margin-left: 500px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 60%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
+  }
+
+  #H1SignIn {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 34px;
   }
 
 }
 
 @media only screen and (max-width: 800px){
   #navBtn {
-    margin-left: 450px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 100px;
+    padding-top: 30px;
+    width: 30%;
   }
 
 }
 
 @media only screen and (max-width: 740px){
   #navBtn {
-    margin-left: 350px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 60px;
+    padding-top: 30px;
+    width: 30%;
+  }
+
+  .addHeader{
+    text-align: center;
+    margin-top: 12%;
+  
+  }
+
+  
+  #page-nav label {
+    display: inline-block;
+    color: #000000;
+    background-color:#e8debd;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
+    height: 50px;
+  }
+
+  /* .hamBtn {
+    widh
+
+  } */
+
+  
+  /* Break down menu items into vertical */
+  #page-nav ul li {
+    display: block;
+  }
+  #page-nav ul li {
+    border-top: 1px solid #333;
+    background-color: #e8debd;
+  }
+
+  /* Toggle show/hide menu on checkbox click */
+  #page-nav ul {
+    display: none;
+  }
+  #page-nav input:checked ~ ul {
+    display: block;
   }
 
 }
 
 @media only screen and (max-width: 640px){
   #navBtn {
-    margin-left: 300px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 60px;
+    padding-top: 30px;
+    padding-right: 10px;
+    width: 30%;
   }
+
+  #navBtns{
+    margin: 1px;
+  }
+
+  #H1SignIn {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 28px;
+  }
+
 
 }
 
 
 @media only screen and (max-width: 580px){
   #navBtn {
-    margin-left: 200px; 
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 70%;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-right: 10px;
+    width: 30%;
+  }
+
+  #navBtns{
+    margin: 1px;
+  }
+
+  #H1SignIn {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 30px;
+  }
+
+  .addHeader{
+    text-align: center;
+    margin-top: 15%;
+  
   }
 
 }
