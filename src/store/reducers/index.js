@@ -14,7 +14,7 @@ import {
     DELETE_PLANT_REQUEST,
     DELETE_PLANT_SUCCESS,
     DELETE_PLANT_FAILURE
-} from '../actions/index';
+}   from '../actions/index';
 
 const initialState = {
   token: null,

@@ -24,7 +24,7 @@ export default function App(props) {
 
         {/* This should redirect the user if they have their token already from loggin in. */}
       {     
-      localStorage.getItem('token') ? <Redirect to="/dashboard" /> : null
+      localStorage.getItem('token') ? <Redirect to="/dashboard/:id" /> : null
       }
 
       <Nav />
@@ -36,7 +36,7 @@ export default function App(props) {
       <Route exact path="/signup" component={Register}  />
 
 
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <PrivateRoute exact path="/dashboard/:id" component={Dashboard} />
       <PrivateRoute exact path="/addplant" component={AddPlant} />
       <PrivateRoute exact path='/plant' component={PlantCard} />
       <PrivateRoute exact path='/edit-plant/:id' component={UpdatePlant} />
