@@ -35,7 +35,7 @@ const H1SignIn = styled.div`
   text-align: center;
 `;
 
-const EmailAndPassword = styled.div`
+const UsernameAndPassword = styled.div`
   text-align: left;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -100,7 +100,7 @@ const Login = (props) => {
 
   const [signIn, setSignIn] = useState({
       username: "",
-       password: ""
+      password: ""
   });
 
   const submitHandler = (event) => {
@@ -127,7 +127,7 @@ const Login = (props) => {
             <form onSubmit={submitHandler}>
                 <H1SignIn>Sign in</H1SignIn>
                 <br />
-                <EmailAndPassword>
+                <UsernameAndPassword>
                     <label>
                         Email Address
             <br />
@@ -140,8 +140,8 @@ const Login = (props) => {
                         />
                         <StyledHr />
                     </label>
-                </EmailAndPassword>
-                <EmailAndPassword>
+                </UsernameAndPassword>
+                <UsernameAndPassword>
                     <label>
                         Password
             <br />
@@ -156,7 +156,7 @@ const Login = (props) => {
                     </label>
                     <Forgot>Forgot your password?</Forgot>
                     <br />
-                </EmailAndPassword>
+                </UsernameAndPassword>
                 <StyledSignInButton>Sign In</StyledSignInButton>
             </form>
             <BottomSignIn>
