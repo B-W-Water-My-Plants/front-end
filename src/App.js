@@ -13,12 +13,14 @@ import Nav from './components/Nav';
 import Dashboard from './components/Dashboard';
 
 import AddPlant from './components/AddPlant';
-import PlantCard from './components/PlantCard';
+// import PlantCard from './components/PlantCard';
 import UpdatePlant from './components/UpdatePlant';
 
 
 
 export default function App(props) {
+
+  
   return (
     <main>
 
@@ -27,6 +29,7 @@ export default function App(props) {
       localStorage.getItem('token') ? <Redirect to="/dashboard/:id" /> : null
       }
 
+      
       <Nav />
     
 
@@ -38,7 +41,7 @@ export default function App(props) {
 
       <PrivateRoute exact path="/dashboard/:id" component={Dashboard} />
       <PrivateRoute exact path="/addplant" component={AddPlant} />
-      <PrivateRoute exact path='/plant' component={PlantCard} />
+      {/* <PrivateRoute exact path='/plant' component={PlantCard} /> */}
       <PrivateRoute exact path='/edit-plant/:id' component={UpdatePlant} />
       </Switch>
     </main>
