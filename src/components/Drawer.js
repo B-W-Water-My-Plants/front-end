@@ -1,12 +1,18 @@
 import React from 'react';
 
 
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
+import {getPlants} from '../store/actions/index'
+import { useDispatch } from 'react-redux';
 
 
 const Drawer = () => {
 
+    const dispatch = useDispatch();
+
+    // const {id} = useParams();
+    
     return( 
         // Navigation BAR
         <nav id="page-nav">
@@ -16,7 +22,7 @@ const Drawer = () => {
             {/* MENU ITEMS */}
             <ul>
                 <li className="hamBtn"><Link to='/addplant'>Add Plant</Link></li>
-                <li className="hamBtn"><Link to='/dashboard'>DashBoard</Link></li>
+                <li className="hamBtn"><Link to='/dashboard/:id' onClick={() =>{dispatch(getPlants());}}>Get Plants</Link></li>
             </ul>
       </nav>
 

@@ -17,7 +17,7 @@ import {
 }   from '../actions/index';
 
 const initialState = {
-  token: null,
+  error: '',
   user: [],
   plantList:[],
 
@@ -36,12 +36,13 @@ export const reducer = (state = initialState, action) => {
             return {
             ...state, 
             user: action.payload,
-            token: action.payload.token
+            
         };
 
         case LOGIN_ERROR:
             return {
             ...state,
+            error: action.payload,
             
         };
         
@@ -61,6 +62,7 @@ export const reducer = (state = initialState, action) => {
           case REGISTER_ERROR:
             return {
               ...state,
+              error: action.error
         
             };
 
@@ -73,17 +75,20 @@ export const reducer = (state = initialState, action) => {
             case GET_PLANTS_SUCCESS:
               return {
                 ...state,
+                plantList: [...action.payload],
               };
 
             case GET_PLANTS_FAILURE:
               return {
-                ...state
+                ...state,
+                error: action.error
               }
               
               // ADD NEW PLANT
               case ADD_PLANT_SUCCESS:
                 return {
                   ...state,
+                  plantList: action.payload
                 };
               case ADD_PLANT_REQUEST:
                 return {
@@ -92,6 +97,7 @@ export const reducer = (state = initialState, action) => {
               case ADD_PLANT_FAILURE:
                 return {
                   ...state,
+                  error: action.error
                 };
                 
                 // DELETE PLANT
@@ -106,6 +112,7 @@ export const reducer = (state = initialState, action) => {
                 case DELETE_PLANT_FAILURE:
                   return {
                     ...state,
+                    error: action.error
                   }
         default:
         return state;

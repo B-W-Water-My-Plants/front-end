@@ -12,6 +12,7 @@ const Navigation = () => {
   
   const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('user_id')
     history.push('/login');
 
   }
