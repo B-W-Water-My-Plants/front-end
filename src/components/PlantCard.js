@@ -20,7 +20,6 @@ export default function PlantCard(props) {
             <p>Nickname: {props.species}</p>
             <p>Species: {props.species}</p>
             <p>H2o Frequency: {props.h2o_frequency}</p>
-            <p>Species: {props.species}</p>
             <img src={props.image} alt="plant pic" />
         </Plants>
     )
