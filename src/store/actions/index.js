@@ -18,7 +18,7 @@ export const loginUser = (signIn, props) => dispatch => {
         console.log(res)
         localStorage.setItem('token', res.data.token)
         dispatch({ type: LOGIN_SUCCESS, payload: res.data })
-        props.history.push('/dashboard')
+        props.history.push(`/dashboard/${res.data.user.id}`)
 
         
     })
