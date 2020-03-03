@@ -17,14 +17,14 @@ const Drawer = () => {
         // Navigation BAR
         <nav id="page-nav">
             {/* HAMBURGER */}
-            <label for="hamburger">&#9776;</label>
+            <label htmlFor="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger"/>
             {/* MENU ITEMS */}
             <ul>
                 <li className="hamBtn"><Link to='/addplant'>Add Plant</Link></li>
                 <li className="hamBtn"><Link to='/dashboard/:id' onClick={() =>{dispatch(getPlants());}}>Get Plants</Link></li>
             </ul>
-      </nav>
+        </nav>
 
     )
 }
