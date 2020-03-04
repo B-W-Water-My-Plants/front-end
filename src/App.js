@@ -40,7 +40,7 @@ export default function App(props) {
       <Route exact path="/signup" component={Register}  />
 
 
-      <PrivateRoute exact path={`/dashboard/${localStorage.getItem('id')}`} component={Dashboard} />
+      <PrivateRoute exact path={'/dashboard/:id'} component={Dashboard} />
       <PrivateRoute exact path="/addplant" component={AddPlant} />
 
       {/* <PrivateRoute exact path='/plant' component={PlantCard} /> */}
