@@ -2,6 +2,7 @@
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 
+
 export const LOGIN_START = 'LOGIN_START'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
@@ -76,6 +77,36 @@ export const getPlants = (props) => dispatch => {
 
 }
 
+export const GET_PLANT_REQUEST = "GET_PLANTS_REQUEST";
+export const GET_PLANT_SUCCESS = "GET_PLANTS_SUCCESS";
+export const GET_PLANT_FAILURE = "GET_PLANTS_FAILURE";
+
+
+export const getPlant = (props) => dispatch => {
+    dispatch({type: GET_PLANT_REQUEST});
+    const id = localStorage.getItem('user_id');
+   
+    console.log(id)
+    
+    
+    axiosWithAuth().get(`/${id}/plants/${props.match.params}`)
+    .then(res => {
+        console.log(res.data)
+        dispatch({
+            type:GET_PLANT_SUCCESS, payload: res.data
+        })
+        props.history.push(`/dashboard/editplant/${id}`)
+        console.log(id);
+        
+    })
+    .catch(error => 
+        dispatch({
+        type: GET_PLANT_FAILURE 
+    }))
+
+
+}
+
 
 export const ADD_PLANT_REQUEST = "ADD_PLANT_REQUEST";
 export const ADD_PLANT_SUCCESS = "ADD_PLANT_SUCCESS";
@@ -91,7 +122,7 @@ export const addPlant = (input, props) => dispatch => {
         console.log(res)
         dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
         console.log('added item', res.data)
-        props.history.push(`/dashboard/${id}`)
+    
         
     })
     .catch(err => dispatch({type: ADD_PLANT_FAILURE }))
