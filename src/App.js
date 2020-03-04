@@ -45,7 +45,7 @@ export default function App(props) {
 
       {/* <PrivateRoute exact path='/plant' component={PlantCard} /> */}
       
-      <PrivateRoute exact path='/edit-plant/:id' component={UpdatePlant} />
+      <PrivateRoute exact path='/edit-plant/:id' render={(props) => <UpdatePlant {...props}/>} />
       </Switch>
     </main>
   );
