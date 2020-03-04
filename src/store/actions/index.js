@@ -56,10 +56,12 @@ export const GET_PLANTS_FAILURE = "GET_PLANTS_FAILURE";
 
 
 // grabs and saves the user ID once they log in
-const id = localStorage.getItem('user_id');
+// const id = localStorage.getItem('user_id');
+// console.log(id);
 
 export const getPlants = (props) => dispatch => {
     dispatch({type: GET_PLANTS_REQUEST});
+    const id = localStorage.getItem('user_id');
     console.log(id)
     axiosWithAuth().get(`/${id}/plants`)
     .then(res => {
@@ -86,7 +88,7 @@ export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
 
 export const addPlant = (input, props) => dispatch => {
     dispatch({type: ADD_PLANT_REQUEST});
-
+    const id = localStorage.getItem('user_id');
     axiosWithAuth().post(`/${id}/plants`, input)
     .then(res => {
         console.log(res)
