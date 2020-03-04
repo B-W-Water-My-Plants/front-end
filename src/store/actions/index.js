@@ -10,7 +10,6 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
 
 
-
 // Working
 
 export const loginUser = (signIn, props) => dispatch => {
@@ -23,7 +22,7 @@ export const loginUser = (signIn, props) => dispatch => {
     .then(res=> {
         console.log(res)
         localStorage.setItem('token', res.data.token)
-        localStorage.setItem('id', res.data.id)
+        localStorage.setItem('user_id', res.data.id)
         dispatch({ type: LOGIN_SUCCESS, payload: res.data })
         props.history.push(`/dashboard/${res.data.id}`)
 
@@ -57,11 +56,10 @@ export const GET_PLANTS_FAILURE = "GET_PLANTS_FAILURE";
 
 
 // grabs and saves the user ID once they log in
-const id = localStorage.getItem('id');
+const id = localStorage.getItem('user_id');
 
 export const getPlants = (props) => dispatch => {
     dispatch({type: GET_PLANTS_REQUEST});
-    
     console.log(id)
     axiosWithAuth().get(`/${id}/plants`)
     .then(res => {
@@ -79,6 +77,7 @@ export const getPlants = (props) => dispatch => {
 
 }
 
+
 export const ADD_PLANT_REQUEST = "ADD_PLANT_REQUEST";
 export const ADD_PLANT_SUCCESS = "ADD_PLANT_SUCCESS";
 export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
@@ -87,7 +86,7 @@ export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
 
 export const addPlant = (input, props) => dispatch => {
     dispatch({type: ADD_PLANT_REQUEST});
-    
+
     axiosWithAuth().post(`/${id}/plants`, input)
     .then(res => {
         console.log(res)

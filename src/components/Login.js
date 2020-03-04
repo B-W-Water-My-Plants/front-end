@@ -129,14 +129,14 @@ const Login = (props) => {
                 <br />
                 <UsernameAndPassword>
                     <label>
-                        Email Address
+                        Username
             <br />
                         <StyledInput
                             type="text"
                             name="username"
-                            value={signIn.email}
+                            value={signIn.username}
                             placeholder=""
-                            onChange={changeHandler} 
+                            onChange={changeHandler} required
                         />
                         <StyledHr />
                     </label>
@@ -150,7 +150,7 @@ const Login = (props) => {
                             name="password"
                             value={signIn.password}
                             placeholder=""
-                            onChange={changeHandler} 
+                            onChange={changeHandler} required
                         />
                         <StyledHr />
                     </label>

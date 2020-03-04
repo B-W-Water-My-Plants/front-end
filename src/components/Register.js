@@ -125,7 +125,7 @@ const Register = () => {
                             type="text"
                             name="username"
                             value={user.username}
-                            onChange={handleChange}
+                            onChange={handleChange} required
                         />
                     </StyledInputDiv>
 
@@ -136,7 +136,7 @@ const Register = () => {
                             type="password"
                             name="password"
                             value={user.password}
-                            onChange={handleChange}
+                            onChange={handleChange} required
                         />
                     </StyledInputDiv>
 
@@ -153,7 +153,7 @@ const Register = () => {
                     <StyledButton>Sign Up</StyledButton>
 
                     <RegisterFooterDiv>
-                        <input type="checkbox" />
+                        <input type="checkbox" required />
                         <StyledP> I accept terms of service available here.</StyledP>
                     </RegisterFooterDiv>
                     <div>
