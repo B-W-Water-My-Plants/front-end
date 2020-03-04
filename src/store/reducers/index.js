@@ -23,6 +23,15 @@ const initialState = {
 
   plantList:[],
 
+  plant: {
+    id:'',
+    nickname: '',
+    species: '',
+    h2o_frequency:'',
+    image:'',
+    user_id: ''
+  }
+
 };
 
 export const reducer = (state = initialState, action) => {
@@ -77,7 +86,6 @@ export const reducer = (state = initialState, action) => {
             case GET_PLANTS_SUCCESS:
               return {
                 ...state,
-                user: action.payload,
                 plantList: [...action.payload],
               };
 

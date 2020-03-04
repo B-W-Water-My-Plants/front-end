@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
+import {useSelector} from 'react-redux';
+
 
 const Plants = styled.div`
 font-size:18px;
@@ -15,15 +17,16 @@ font-size:18px;
   padding:2%;
 `;
 
-export default function PlantCard(props) {
+export default function PlantCard() {
 
+    const plants = useSelector(state => state.plantList);
 
     return (
         <Plants>
-            <h2>{props.plants}</h2>
-            <p>Nickname: {props.nickname}</p>
-            <p>Species: {props.species}</p>
-            <p>H2o Frequency: {props.h2o}</p>
+            <h2>{plants.plants}</h2>
+            <p>Nickname: {plants.nickname}</p>
+            <p>Species: {plants.species}</p>
+            <p>H2o Frequency: {plants.h2o}</p>
         </Plants>
     )
 }

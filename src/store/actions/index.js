@@ -1,4 +1,4 @@
-// import axios from 'axios'
+
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 
@@ -86,7 +86,7 @@ export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
 export const addPlant = (input, props) => dispatch => {
     dispatch({type: ADD_PLANT_REQUEST});
     const id = localStorage.getItem('user_id');
-    axiosWithAuth().post(`/${id}/plants`, input)
+       axiosWithAuth().post(`/${id}/plants`, input)
     .then(res => {
         console.log(res)
         dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
