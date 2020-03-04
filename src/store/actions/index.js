@@ -4,6 +4,7 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 
 
+
 export const LOGIN_START = 'LOGIN_START'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
@@ -14,6 +15,7 @@ export const LOGIN_ERROR = 'LOGIN_ERROR'
 export const loginUser = (signIn, props) => dispatch => {
     dispatch({ type: LOGIN_START }) 
     
+    
 
     axiosWithAuth()
     .post('/auth/login', signIn)
@@ -22,7 +24,7 @@ export const loginUser = (signIn, props) => dispatch => {
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('user_id', res.data.id)
         dispatch({ type: LOGIN_SUCCESS, payload: res.data })
-        props.history.push(`/dashboard`)
+        props.history.push(`/dashboard/${res.data.id}`)
 
         
     })

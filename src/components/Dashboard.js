@@ -10,10 +10,9 @@ import PlantCard from './PlantCard';
 
 
 
-const Dashboard = (props) => {    
+const Dashboard = () => {    
     const dispatch = useDispatch();
     const plants = useSelector(state => state.plantList);
-
    
     // MVP for React 1
     useEffect(()=> {
@@ -25,10 +24,10 @@ const Dashboard = (props) => {
     return(
         <section id="dashBg">
             <Drawer />
-            <div> 
-                {plants.map(plant => 
+            {plants.map(plant => 
                 <div>
-                    <PlantCard 
+                <PlantCard 
+                    key={plant.id}
                     nickname = { plant.nickname }
                     species = { plant.species }
                     image = { plant.image } 
@@ -36,8 +35,6 @@ const Dashboard = (props) => {
                 </div> 
                              
                 )}
-                )}
-            </div>
         </section>
     )
 

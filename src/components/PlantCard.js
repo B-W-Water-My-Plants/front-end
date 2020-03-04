@@ -11,7 +11,7 @@ font-size:18px;
   padding:5px;
   margin: 15px;
   color:black;
-  background:#a9d3e9;
+  background:#E8DEBD;
   padding:2%;
 `;
 
