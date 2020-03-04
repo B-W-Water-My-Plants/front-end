@@ -153,7 +153,7 @@ const Register = () => {
                     <StyledButton>Sign Up</StyledButton>
 
                     <RegisterFooterDiv>
-                        <input type="checkbox"  required/>
+                        <input type="checkbox" />
                         <StyledP> I accept terms of service available here.</StyledP>
                     </RegisterFooterDiv>
                     <div>
