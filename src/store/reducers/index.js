@@ -18,7 +18,9 @@ import {
 
 const initialState = {
   error: '',
+  
   user: [],
+
   plantList:[],
 
 };

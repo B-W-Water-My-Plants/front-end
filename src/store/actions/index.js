@@ -10,6 +10,7 @@ export const LOGIN_ERROR = 'LOGIN_ERROR'
 
 
 // Working
+
 export const loginUser = (signIn, props) => dispatch => {
     dispatch({ type: LOGIN_START }) 
     
@@ -29,6 +30,7 @@ export const loginUser = (signIn, props) => dispatch => {
 }
 
 //Working
+
 export const REGISTER_START = 'REGISTER_START'
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
@@ -79,6 +81,7 @@ export const ADD_PLANT_SUCCESS = "ADD_PLANT_SUCCESS";
 export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
 
 // Working
+
 export const addPlant = (input, props) => dispatch => {
     dispatch({type: ADD_PLANT_REQUEST});
 
