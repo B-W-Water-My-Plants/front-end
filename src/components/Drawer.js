@@ -8,14 +8,16 @@ import { useDispatch } from 'react-redux';
 
 const Drawer = () => {
 
+    
     const dispatch = useDispatch();
 
+   
     
     
     return( 
         // Navigation BAR
         <nav id="page-nav">
-            {/* HAMBURGER */}
+            {/* HAMBURGER */} 
             <label htmlFor="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger"/>
             {/* MENU ITEMS */}
@@ -23,7 +25,7 @@ const Drawer = () => {
                 
                 <li className="hamBtn"><Link to='/addplant'>Add Plant</Link></li>
 
-                <li className="hamBtn"><Link to='/dashboard/:id' onClick={() =>{dispatch(getPlants());}}>Get Plants</Link></li>
+                <li className="hamBtn"><Link to={`/dashboard/${localStorage.getItem('id')}`} onClick={() =>{dispatch(getPlants());}}>Get Plants</Link></li>
             </ul>
         </nav>
 

@@ -24,10 +24,10 @@ const Dashboard = () => {
     return(
         <section id="dashBg">
             <Drawer />
-            {plants.map(plant => 
+            {plants.map((plant, idx)  => 
                 <div>
                 <PlantCard 
-                    key={plant.id}
+                    key={idx}
                     nickname = { plant.nickname }
                     species = { plant.species }
                     image = { plant.image } 
