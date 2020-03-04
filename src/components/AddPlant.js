@@ -176,3 +176,4 @@ const AddPlant = props => {
 
 };
 
+export default AddPlant;
