@@ -21,12 +21,13 @@ import UpdatePlant from './components/UpdatePlant';
 export default function App(props) {
 
   
+  
   return (
     <main>
 
         {/* This should redirect the user if they have their token already from loggin in. */}
       {     
-      localStorage.getItem('token') ? <Redirect to="/dashboard/:id" /> : null
+      localStorage.getItem('token') ? <Redirect to={`/dashboard/${localStorage.getItem('id')}`} /> : null
       }
 
       
@@ -39,7 +40,7 @@ export default function App(props) {
       <Route exact path="/signup" component={Register}  />
 
 
-      <PrivateRoute exact path="/dashboard/:id" component={Dashboard} />
+      <PrivateRoute exact path={`/dashboard/${localStorage.getItem('id')}`} component={Dashboard} />
       <PrivateRoute exact path="/addplant" component={AddPlant} />
 
       {/* <PrivateRoute exact path='/plant' component={PlantCard} /> */}
