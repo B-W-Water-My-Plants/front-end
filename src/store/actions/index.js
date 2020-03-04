@@ -10,7 +10,6 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
 
 
-
 // Working
 
 export const loginUser = (signIn, props) => dispatch => {
@@ -79,6 +78,7 @@ export const getPlants = (props) => dispatch => {
 
 
 }
+
 
 export const ADD_PLANT_REQUEST = "ADD_PLANT_REQUEST";
 export const ADD_PLANT_SUCCESS = "ADD_PLANT_SUCCESS";
