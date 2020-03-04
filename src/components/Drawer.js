@@ -11,7 +11,7 @@ const Drawer = () => {
     
     const dispatch = useDispatch();
 
-   
+    // ${localStorage.getItem('id')}
     
     
     return( 
@@ -25,7 +25,7 @@ const Drawer = () => {
                 
                 <li className="hamBtn"><Link to='/addplant'>Add Plant</Link></li>
 
-                <li className="hamBtn"><Link to={`/dashboard/${localStorage.getItem('id')}`} onClick={() =>{dispatch(getPlants());}}>Get Plants</Link></li>
+                <li className="hamBtn"><Link to={'/dashboard/:id'} onClick={() =>{dispatch(getPlants());}}>Get Plants</Link></li>
             </ul>
         </nav>
 

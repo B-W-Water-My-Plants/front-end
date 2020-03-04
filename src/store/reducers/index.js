@@ -77,6 +77,7 @@ export const reducer = (state = initialState, action) => {
             case GET_PLANTS_SUCCESS:
               return {
                 ...state,
+                user: action.payload,
                 plantList: [...action.payload],
               };
 
