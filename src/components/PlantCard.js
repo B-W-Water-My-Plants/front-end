@@ -24,8 +24,6 @@ export default function PlantCard(props) {
             <p>Nickname: {props.nickname}</p>
             <p>Species: {props.species}</p>
             <p>H2o Frequency: {props.h2o}</p>
-            <p>Species: {props.species}</p>
-           
         </Plants>
     )
 }
