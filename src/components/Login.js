@@ -135,7 +135,7 @@ const Login = (props) => {
                             type="text"
                             name="username"
                             value={signIn.username}
-                            placeholder=""
+                            placeholder="Username"
                             onChange={changeHandler} required
                         />
                         <StyledHr />
@@ -149,7 +149,7 @@ const Login = (props) => {
                             type="password"
                             name="password"
                             value={signIn.password}
-                            placeholder=""
+                            placeholder="Password"
                             onChange={changeHandler} required
                         />
                         <StyledHr />
