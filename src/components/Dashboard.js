@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
  
-
 
 import {getPlants} from '../store/actions/index'
 
@@ -8,67 +7,53 @@ import { useSelector, useDispatch} from 'react-redux'
 
 import PlantCard from './PlantCard';
 
-import {useParams} from 'react-router-dom'
+
+import {deletePlant} from '../store/actions/index';
 
 
-import {deletePlant} from '../store/actions/index'
-
-const Dashboard = (props) => {    
+const Dashboard = () => {    
 
     const dispatch = useDispatch();
     const plants = useSelector(state => state.plantList);
     
-    const [plant, setPlant] = useState([]);
-    const {id} = useParams();
+  
+    console.log(plants);
+
+    
   
     
     // MVP for React 1
     useEffect(()=> {
+        // this will be my action to call the plants list when I get the end point
         dispatch(getPlants());
         
     }, [dispatch])
 
-    const handleClick = () => {
-		setPlant(plant.filter(data => parseInt(data.user_id) === parseInt(id)));
-   };
-  
-   
-    const handleDelete = (plantId) => {
-        console.log(plants.id);
-        
-        dispatch(deletePlant(plants));
-        console.log(plants.id);
-        
-    }
  
     return(
         <section id="dashBg">
-           
-            <div>
-            <div><button onClick={handleClick}>Show List</button></div>
-            <button onClick={e  => {
-                    e.stopPropagation(); 
-                    handleDelete()}}>Delete</button>
-                    
-
-            <button>Edit</button>
-            {plants.map(plant  => 
+          
+            
+            
+            {plants.map(plants  => 
           
                 <div>
                 <PlantCard 
-                    key={plant.id}
-                    nickname = { plant.nickname }
-                    species = { plant.species }
-                    image = { plant.image } 
-                    h2o={plant.h2o_frequency}
+                    key={plants.id}
+                    nickname = { plants.nickname }
+                    species = { plants.species }
+                    image = { plants.image } 
+                    h2o={plants.h2o_frequency}
                     
                 />   
 
+                <button onClick={() => {dispatch(deletePlant(plants.id));}}>Delete</button>
 
+                <button>Edit</button>
 
                 </div>   
                 )}
-                </div>
+                
         </section>
     )
 
