@@ -64,7 +64,8 @@ export const getPlants = (props) => dispatch => {
     console.log(id)
     axiosWithAuth().get(`/${id}/plants`)
     .then(res => {
-        console.log(res)
+        console.log(res);
+        
         dispatch({
             type:GET_PLANTS_SUCCESS, payload: res.data
         })
@@ -78,12 +79,14 @@ export const getPlants = (props) => dispatch => {
 
 }
 
+// get individual plant
+
 export const GET_PLANT_REQUEST = "GET_PLANTS_REQUEST";
 export const GET_PLANT_SUCCESS = "GET_PLANTS_SUCCESS";
 export const GET_PLANT_FAILURE = "GET_PLANTS_FAILURE";
 
 
-export const getPlant = (props, plantId) => dispatch => {
+export const getPlant = (plantId) => dispatch => {
     dispatch({type: GET_PLANT_REQUEST});
     const id = localStorage.getItem('user_id');
    
@@ -116,7 +119,7 @@ export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
 
 // Working
 
-export const addPlant = (input, props) => dispatch => {
+export const addPlant = (input) => dispatch => {
     dispatch({type: ADD_PLANT_REQUEST});
     const id = localStorage.getItem('user_id');
        axiosWithAuth().post(`/${id}/plants`, input)
@@ -132,13 +135,32 @@ export const addPlant = (input, props) => dispatch => {
 
 }
 
+export const EDIT_PLANT_REQUEST = "DELETE_PLANT_REQUEST";
+export const EDIT_PLANT_SUCCESS = "DELETE_PLANT_SUCCESS";
+export const EDIT_PLANT_FAILURE = "DELETE_PLANT_FAILURE";
+
+export const editPlant = (plantId) => dispatch => {
+    dispatch({type: EDIT_PLANT_REQUEST});
+
+    const id = localStorage.getItem('user_id');
+
+    axiosWithAuth().put(`/${id}/plants/${plantId}`)
+    .then(res => {
+        dispatch({type: EDIT_PLANT_SUCCESS, payload: res.data})
+        console.log(res.data);
+        
+    })
+     
+
+
+}
 
 
 export const DELETE_PLANT_REQUEST = "DELETE_PLANT_REQUEST";
 export const DELETE_PLANT_SUCCESS = "DELETE_PLANT_SUCCESS";
 export const DELETE_PLANT_FAILURE = "DELETE_PLANT_FAILURE";
 
-export const deletePlant = (plantId, props) => dispatch => {
+export const deletePlant = (plantId) => dispatch => {
     dispatch({type: DELETE_PLANT_REQUEST});
     const id = localStorage.getItem('user_id');
     console.log(plantId);
@@ -149,10 +171,11 @@ export const deletePlant = (plantId, props) => dispatch => {
         console.log(res.data)
         dispatch({type: DELETE_PLANT_SUCCESS, payload: res.data})
         console.log('deleted item', res.data);
-        console.log(id);
-        
-        props.history.push(`/dashboard/${id}`)
+        console.log(plantId);
+
+        // history.push(`/dashboard/${id}`)
         
     })
-    .catch(err => dispatch({type: DELETE_PLANT_FAILURE}))
+    .catch(err => dispatch({type: DELETE_PLANT_FAILURE})
+    )
 }

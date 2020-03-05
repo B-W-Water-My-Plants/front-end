@@ -18,16 +18,24 @@ font-size:18px;
 
 export default function PlantCard(props) {
 
-    // const dispatch = useDispatch()
+ 
 
     return (
-        <Plants>
+      
+        
+        <Plants key={props.id}>
             <h2>{props.plants}</h2>
             <p>Nickname: {props.nickname}</p>
             <p>Species: {props.species}</p>
             <p>H2o Frequency: {props.h2o}</p>
 
-            
+         
+    
         </Plants>
+        
+      
+        
     )
+
+
 }

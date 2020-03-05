@@ -26,15 +26,6 @@ const initialState = {
 
   plantList:[],
 
-  plants: {
-    id:'',
-    nickname: '',
-    species: '',
-    h2o_frequency:'',
-    image:'',
-    user_id: ''
-  }
-
 };
 
 export const reducer = (state = initialState, action) => {
@@ -116,15 +107,7 @@ export const reducer = (state = initialState, action) => {
             case GET_PLANT_SUCCESS:
               return {
                 ...state,
-                plant: {
-                  id: action.payload.id,
-                  nickname: action.payload.nickname,
-                  species: action.payload.species,
-                  h2o_frequency: action.payload.h2o_frequency,
-                  image: action.payload.image,
-                  user_id: action.payload.id
-                }
-              };
+              }
 
             case GET_PLANT_FAILURE:
               return {
@@ -138,7 +121,7 @@ export const reducer = (state = initialState, action) => {
               case ADD_PLANT_SUCCESS:
                 return {
                   ...state,
-                  plantList: action.payload
+                  plantList: [...state.plantList, action.payload]
                 };
               case ADD_PLANT_REQUEST:
                 return {
@@ -161,6 +144,7 @@ export const reducer = (state = initialState, action) => {
                 case DELETE_PLANT_SUCCESS:
                   return {
                     ...state,
+                   
                     
                   }
                 case DELETE_PLANT_FAILURE:

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 
-import { getPlant } from '../store/actions';
+import { getPlants } from '../store/actions';
 
 import {useDispatch} from 'react-redux'
 
@@ -23,7 +23,7 @@ const UpdatePlant = () => {
     // })
 
     useEffect(() => {
-        dispatch(getPlant())
+        dispatch(getPlants())
         
     }, [dispatch])
 

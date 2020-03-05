@@ -5,6 +5,8 @@ import {  Button } from 'antd';
 
 import {useHistory} from 'react-router-dom'
 
+import Drawer from './Drawer';
+
 
 const Navigation = () => {
 
@@ -38,6 +40,7 @@ const Navigation = () => {
         </div>
         )}
     </nav>
+    <Drawer />
     </>
   );
 };
