@@ -5,15 +5,16 @@ import styled from "styled-components";
 
 
 const Plants = styled.div`
-font-size:18px;
-  border:1px solid black;
-  text-align:center;
-  border-radius:10px;
-  padding:5px;
-  margin: 15px;
-  color:black;
-  background:#E8DEBD;
-  padding:2%;
+    font-size: 1.5rem;
+    border:2px solid #97C6A5;
+    text-align:center;
+    border-radius:10px;
+    padding:5px;
+    margin: 15px;
+    margin-top: 20%;
+    color:black;
+    background:#E8DEBD;
+    padding:2%;
 `;
 
 export default function PlantCard(props) {

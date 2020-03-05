@@ -10,84 +10,91 @@ import { addPlant } from "../store/actions";
 
 
 
+// Form
 const StyledContainer = styled.div`
-    width: 475px;
-    background-color: #E8DEBD;
-    margin: 0 auto;
-    border-radius: 15px;
-    margin-top: 2.4%;
-    margin-right: 5%;
-    height: 600px;
+    border:2px solid #97C6A5;
+    text-align:center;
+    border-radius:10px;
+    padding:10px;
+    margin-left 15px;
+    margin-right 20px;
+    margin-top: 20%;
+    color:black;
+    background:#E8DEBD;
+    padding:2%;
 `;
 
 const StyledInputContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding-left: 2%;
     padding-right: 5%;
     padding-bottom: 5%;
 `;
 
 const StyledH1 = styled.h1`
-    font-size: 1rem;
-    text-align: left;
+    font-size: 2rem;
+    text-align: center;
     padding-left: 6%;
-    padding-top: 5%;
+    padding-top: 3%;
     padding-bottom: 3%;
-    color: #198974;
-  `;
+    color: black;
+`;
+
 const StyledInput = styled.input`
-    width: 77%;
+    width: 70%;
     border-radius: 4px;
-    height: 20px;
-  `;
+    height: 25px;
+`;
+
 const StyledLIDiv = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 1%;
-    align-items: flex-end;
+    align-items: flex-start;
 `;
 
 const Styledlabel = styled.label`
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
-    color: #7ea897;
+    font-size: 1rem;
+    color: black;
 `;
 
 const StyledAddbtn = styled.button`
-    color: white;
-    background: #78c885;
-    border: none;
+    color: black;
+    background: #97C6A5;
+    border: 1px solid #7D695F;
     font-size: 13px;
     border-radius: 3px;
     outline: none;
     padding: 10px 30px 10px 30px;
     margin-top: 10px;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
 `;
 
 const StyledCancelbtn = styled.button`
-    color: white;
-    background: #78c885;
-    border: none;
+    color: black;
+    background: #97C6A5;
+    border: 1px solid #7D695F;
     font-size: 13px;
     border-radius: 3px;
     outline: none;
     padding: 10px 25px 10px 25px;
     margin-top: 10px;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
 `;
 
 const StyledBtnDiv = styled.div`
-    margin-left: 110px;
+    margin-left: 115px;
 `;
+
 
 const AddPlant = props => {
 
@@ -117,9 +124,6 @@ const AddPlant = props => {
         console.log(input)
     };
 
-    // Form
-    
-
     return (
       <>
       <Drawer />
@@ -130,14 +134,13 @@ const AddPlant = props => {
                 <StyledInputContainer className="input-container">
                     {/* Name of plant input */}
                     <StyledLIDiv>
-                        <Styledlabel htmlFor="nickname">
-                        Nickname: <StyledInput
+                        <Styledlabel htmlFor="nickname">Nickname: </Styledlabel> 
+                        <StyledInput
                         type="text"
                         value={input.nickname}
                         onChange={(event)=> inputHandler(event)}
-                        name="nickname" />
-
-                        </Styledlabel>
+                        name="nickname"    
+                        />
                         
                     </StyledLIDiv>
 
@@ -151,8 +154,8 @@ const AddPlant = props => {
                             onChange={inputHandler}
                             name="species"
                         />
-                    </StyledLIDiv>
 
+                    </StyledLIDiv>
                     {/* H2oFrequency of plant */}
                     <StyledLIDiv>
                         <Styledlabel htmlFor="h2o_frequency">H2o Frequency: </Styledlabel>
