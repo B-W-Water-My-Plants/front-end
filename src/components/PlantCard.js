@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 
+
 const Plants = styled.div`
 font-size:18px;
   border:1px solid black;
@@ -17,6 +18,7 @@ font-size:18px;
 
 export default function PlantCard(props) {
 
+    // const dispatch = useDispatch()
 
     return (
         <Plants>
@@ -24,6 +26,8 @@ export default function PlantCard(props) {
             <p>Nickname: {props.nickname}</p>
             <p>Species: {props.species}</p>
             <p>H2o Frequency: {props.h2o}</p>
+
+            
         </Plants>
     )
 }

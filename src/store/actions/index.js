@@ -1,5 +1,7 @@
-// import axios from 'axios'
+
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
+
+
 
 
 export const LOGIN_START = 'LOGIN_START'
@@ -76,6 +78,37 @@ export const getPlants = (props) => dispatch => {
 
 }
 
+export const GET_PLANT_REQUEST = "GET_PLANTS_REQUEST";
+export const GET_PLANT_SUCCESS = "GET_PLANTS_SUCCESS";
+export const GET_PLANT_FAILURE = "GET_PLANTS_FAILURE";
+
+
+export const getPlant = (props, plantId) => dispatch => {
+    dispatch({type: GET_PLANT_REQUEST});
+    const id = localStorage.getItem('user_id');
+   
+    console.log(id)
+    console.log(plantId);
+    
+    
+    axiosWithAuth().get(`/${id}/plants/${plantId}`)
+    .then(res => {
+        console.log(res.data)
+        dispatch({
+            type:GET_PLANT_SUCCESS, payload: res.data
+        })
+        
+        console.log(id);
+        
+    })
+    .catch(error => 
+        dispatch({
+        type: GET_PLANT_FAILURE 
+    }))
+
+
+}
+
 
 export const ADD_PLANT_REQUEST = "ADD_PLANT_REQUEST";
 export const ADD_PLANT_SUCCESS = "ADD_PLANT_SUCCESS";
@@ -86,12 +119,12 @@ export const ADD_PLANT_FAILURE = "ADD_PLANT_FAILURE";
 export const addPlant = (input, props) => dispatch => {
     dispatch({type: ADD_PLANT_REQUEST});
     const id = localStorage.getItem('user_id');
-    axiosWithAuth().post(`/${id}/plants`, input)
+       axiosWithAuth().post(`/${id}/plants`, input)
     .then(res => {
         console.log(res)
         dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
         console.log('added item', res.data)
-        props.history.push(`/dashboard/${id}`)
+    
         
     })
     .catch(err => dispatch({type: ADD_PLANT_FAILURE }))
@@ -105,7 +138,21 @@ export const DELETE_PLANT_REQUEST = "DELETE_PLANT_REQUEST";
 export const DELETE_PLANT_SUCCESS = "DELETE_PLANT_SUCCESS";
 export const DELETE_PLANT_FAILURE = "DELETE_PLANT_FAILURE";
 
-export const deletePlant = () => dispatch => {
-    // dispatch({type: DELETE_PLANT_REQUEST});
+export const deletePlant = (plantId, props) => dispatch => {
+    dispatch({type: DELETE_PLANT_REQUEST});
+    const id = localStorage.getItem('user_id');
+    console.log(plantId);
+    
+    
+    axiosWithAuth().delete(`/${id}/plants/${plantId}`)
+    .then(res => {
+        console.log(res.data)
+        dispatch({type: DELETE_PLANT_SUCCESS, payload: res.data})
+        console.log('deleted item', res.data);
+        console.log(id);
+        
+        props.history.push(`/dashboard/${id}`)
+        
+    })
+    .catch(err => dispatch({type: DELETE_PLANT_FAILURE}))
 }
-

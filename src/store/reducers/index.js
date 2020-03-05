@@ -8,6 +8,9 @@ import {
     GET_PLANTS_REQUEST,
     GET_PLANTS_SUCCESS,
     GET_PLANTS_FAILURE,
+    GET_PLANT_REQUEST,
+    GET_PLANT_SUCCESS,
+    GET_PLANT_FAILURE,
     ADD_PLANT_REQUEST,
     ADD_PLANT_SUCCESS,
     ADD_PLANT_FAILURE,
@@ -23,12 +26,22 @@ const initialState = {
 
   plantList:[],
 
+  plants: {
+    id:'',
+    nickname: '',
+    species: '',
+    h2o_frequency:'',
+    image:'',
+    user_id: ''
+  }
+
 };
 
 export const reducer = (state = initialState, action) => {
     switch(action.type){
 
       // LOGIN EXISTING USER
+      
         case LOGIN_START:
             return {
             ...state,
@@ -49,6 +62,8 @@ export const reducer = (state = initialState, action) => {
         };
         
         // REGISTER NEW USER
+
+
         case REGISTER_START:
             return {
               ...state,
@@ -69,6 +84,8 @@ export const reducer = (state = initialState, action) => {
             };
 
             //GET PLANT LIST
+
+
             case GET_PLANTS_REQUEST:
               return {
                 ...state,
@@ -77,7 +94,6 @@ export const reducer = (state = initialState, action) => {
             case GET_PLANTS_SUCCESS:
               return {
                 ...state,
-                user: action.payload,
                 plantList: [...action.payload],
               };
 
@@ -86,8 +102,39 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 error: action.error
               }
+
+
+              // GET SINGLE PLANT
+
+
+              case GET_PLANT_REQUEST:
+              return {
+                ...state,
+                
+              };
+
+            case GET_PLANT_SUCCESS:
+              return {
+                ...state,
+                plant: {
+                  id: action.payload.id,
+                  nickname: action.payload.nickname,
+                  species: action.payload.species,
+                  h2o_frequency: action.payload.h2o_frequency,
+                  image: action.payload.image,
+                  user_id: action.payload.id
+                }
+              };
+
+            case GET_PLANT_FAILURE:
+              return {
+                ...state,
+                error: action.error
+              }
               
               // ADD NEW PLANT
+
+
               case ADD_PLANT_SUCCESS:
                 return {
                   ...state,
@@ -103,7 +150,10 @@ export const reducer = (state = initialState, action) => {
                   error: action.error
                 };
                 
+
                 // DELETE PLANT
+
+
                 case DELETE_PLANT_REQUEST:
                   return {
                     ...state,
@@ -111,6 +161,7 @@ export const reducer = (state = initialState, action) => {
                 case DELETE_PLANT_SUCCESS:
                   return {
                     ...state,
+                    
                   }
                 case DELETE_PLANT_FAILURE:
                   return {

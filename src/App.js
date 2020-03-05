@@ -40,12 +40,12 @@ export default function App(props) {
       <Route exact path="/signup" component={Register}  />
 
 
-      <PrivateRoute exact path={'/dashboard/:id'} component={Dashboard} />
+      <PrivateRoute exact path='/dashboard/:id' component={Dashboard} {...props}/>
       <PrivateRoute exact path="/addplant" component={AddPlant} />
 
-      {/* <PrivateRoute exact path='/plant' component={PlantCard} /> */}
+      {/* <PrivateRoute exact path='/plant/:id' component={Plant} /> */}
       
-      <PrivateRoute exact path='/edit-plant/:id' component={UpdatePlant} />
+      <PrivateRoute exact path='/editplant/:id' component={UpdatePlant} />
       </Switch>
     </main>
   );
