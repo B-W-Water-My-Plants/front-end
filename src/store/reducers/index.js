@@ -26,7 +26,7 @@ const initialState = {
 
   plantList:[],
 
-  plant: {
+  plants: {
     id:'',
     nickname: '',
     species: '',
@@ -161,6 +161,7 @@ export const reducer = (state = initialState, action) => {
                 case DELETE_PLANT_SUCCESS:
                   return {
                     ...state,
+                    
                   }
                 case DELETE_PLANT_FAILURE:
                   return {

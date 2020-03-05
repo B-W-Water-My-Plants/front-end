@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
  
-import {Link, useParams}from 'react-router-dom';
+
 
 import Drawer from './Drawer'
 import {getPlants} from '../store/actions/index'
@@ -10,6 +10,8 @@ import { useSelector, useDispatch} from 'react-redux'
 import PlantCard from './PlantCard';
 
 
+import {deletePlant} from '../store/actions/index';
+
 
 const Dashboard = () => {    
 
@@ -17,9 +19,9 @@ const Dashboard = () => {
     const plants = useSelector(state => state.plantList);
     
   
-    console.log(plants.length);
+    console.log(plants);
 
-    const id = useParams();
+    
   
     
     // MVP for React 1
@@ -33,26 +35,30 @@ const Dashboard = () => {
     return(
         <section id="dashBg">
             <Drawer />
-            <Link to={`/editplant/${id}`}>
             
             
-            {plants.map(plant  => 
+            {plants.map(plants  => 
           
                 <div>
-                
                 <PlantCard 
-                    key={plant.id}
-                    nickname = { plant.nickname }
-                    species = { plant.species }
-                    image = { plant.image } 
-                    h2o={plant.h2o_frequency}/>
+                    key={plants.id}
+                    nickname = { plants.nickname }
+                    species = { plants.species }
+                    image = { plants.image } 
+                    h2o={plants.h2o_frequency}
+                    
+                />   
+
+                <button onClick={() => {dispatch(deletePlant(plants.id));}}>Delete</button>
+
+                <button>Edit</button>
+
                 </div>   
                 )}
-                </Link>  
+                
         </section>
     )
 
 }
-        
 
 export default Dashboard;

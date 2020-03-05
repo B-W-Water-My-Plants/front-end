@@ -2,7 +2,6 @@ import React from "react";
 
 import styled from "styled-components";
 
-import {useSelector} from 'react-redux';
 
 
 const Plants = styled.div`
@@ -19,7 +18,7 @@ font-size:18px;
 
 export default function PlantCard(props) {
 
-    
+    // const dispatch = useDispatch()
 
     return (
         <Plants>
@@ -27,6 +26,8 @@ export default function PlantCard(props) {
             <p>Nickname: {props.nickname}</p>
             <p>Species: {props.species}</p>
             <p>H2o Frequency: {props.h2o}</p>
+
+            
         </Plants>
     )
 }

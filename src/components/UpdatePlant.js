@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
 import { getPlant } from '../store/actions';
 
@@ -25,7 +25,7 @@ const UpdatePlant = () => {
     useEffect(() => {
         dispatch(getPlant())
         
-    })
+    }, [dispatch])
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -37,6 +37,7 @@ const UpdatePlant = () => {
         <>
             <form onSubmit={submitHandler} className="form">
                 <h3>Edit Plant</h3>
+                {}
 
              
             </form></>

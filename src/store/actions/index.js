@@ -3,6 +3,7 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 
 
+
 export const LOGIN_START = 'LOGIN_START'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
@@ -82,20 +83,21 @@ export const GET_PLANT_SUCCESS = "GET_PLANTS_SUCCESS";
 export const GET_PLANT_FAILURE = "GET_PLANTS_FAILURE";
 
 
-export const getPlant = (props) => dispatch => {
+export const getPlant = (props, plantId) => dispatch => {
     dispatch({type: GET_PLANT_REQUEST});
     const id = localStorage.getItem('user_id');
    
     console.log(id)
+    console.log(plantId);
     
     
-    axiosWithAuth().get(`/${id}/plants/${props.match.params}`)
+    axiosWithAuth().get(`/${id}/plants/${plantId}`)
     .then(res => {
         console.log(res.data)
         dispatch({
             type:GET_PLANT_SUCCESS, payload: res.data
         })
-        props.history.push(`/dashboard/editplant/${id}`)
+        
         console.log(id);
         
     })
@@ -136,7 +138,21 @@ export const DELETE_PLANT_REQUEST = "DELETE_PLANT_REQUEST";
 export const DELETE_PLANT_SUCCESS = "DELETE_PLANT_SUCCESS";
 export const DELETE_PLANT_FAILURE = "DELETE_PLANT_FAILURE";
 
-export const deletePlant = () => dispatch => {
-    // dispatch({type: DELETE_PLANT_REQUEST});
+export const deletePlant = (plantId, props) => dispatch => {
+    dispatch({type: DELETE_PLANT_REQUEST});
+    const id = localStorage.getItem('user_id');
+    console.log(plantId);
+    
+    
+    axiosWithAuth().delete(`/${id}/plants/${plantId}`)
+    .then(res => {
+        console.log(res.data)
+        dispatch({type: DELETE_PLANT_SUCCESS, payload: res.data})
+        console.log('deleted item', res.data);
+        console.log(id);
+        
+        props.history.push(`/dashboard/${id}`)
+        
+    })
+    .catch(err => dispatch({type: DELETE_PLANT_FAILURE}))
 }
-
