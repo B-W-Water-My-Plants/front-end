@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Drawer from "./Drawer";
+
 import styled from "styled-components";
 
 
@@ -126,7 +126,7 @@ const AddPlant = props => {
 
     return (
       <>
-      <Drawer />
+      
         <StyledContainer>
             <form onSubmit={submitHandler} className="form">
                 <StyledH1>Add Plant</StyledH1>

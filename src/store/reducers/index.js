@@ -14,6 +14,9 @@ import {
     ADD_PLANT_REQUEST,
     ADD_PLANT_SUCCESS,
     ADD_PLANT_FAILURE,
+    EDIT_PLANT_REQUEST,
+    EDIT_PLANT_SUCCESS,
+    EDIT_PLANT_FAILURE,
     DELETE_PLANT_REQUEST,
     DELETE_PLANT_SUCCESS,
     DELETE_PLANT_FAILURE
@@ -26,18 +29,11 @@ const initialState = {
 
   plantList:[],
 
-  plants: {
-    id:'',
-    nickname: '',
-    species: '',
-    h2o_frequency:'',
-    image:'',
-    user_id: ''
-  }
-
 };
 
 export const reducer = (state = initialState, action) => {
+  console.log(action);
+  
     switch(action.type){
 
       // LOGIN EXISTING USER
@@ -116,15 +112,7 @@ export const reducer = (state = initialState, action) => {
             case GET_PLANT_SUCCESS:
               return {
                 ...state,
-                plant: {
-                  id: action.payload.id,
-                  nickname: action.payload.nickname,
-                  species: action.payload.species,
-                  h2o_frequency: action.payload.h2o_frequency,
-                  image: action.payload.image,
-                  user_id: action.payload.id
-                }
-              };
+              }
 
             case GET_PLANT_FAILURE:
               return {
@@ -138,7 +126,7 @@ export const reducer = (state = initialState, action) => {
               case ADD_PLANT_SUCCESS:
                 return {
                   ...state,
-                  plantList: action.payload
+                  plantList: [...state.plantList, action.payload]
                 };
               case ADD_PLANT_REQUEST:
                 return {
@@ -150,17 +138,39 @@ export const reducer = (state = initialState, action) => {
                   error: action.error
                 };
                 
+                case EDIT_PLANT_REQUEST:
+                  return {
+                    ...state,
+                  }
+                case EDIT_PLANT_SUCCESS:
+                  return {
+                    ...state,
+                   
+                    
+                  }
+                case EDIT_PLANT_FAILURE:
+                  return {
+                    ...state,
+                    error: action.error
+                  }
 
                 // DELETE PLANT
 
 
                 case DELETE_PLANT_REQUEST:
+
+                  console.log('testing');
+                  
                   return {
                     ...state,
                   }
                 case DELETE_PLANT_SUCCESS:
+                  console.log(action.payload);
+                  
                   return {
+
                     ...state,
+                   plantList: state.plantList.filter(plant => plant.id !== action.payload)
                     
                   }
                 case DELETE_PLANT_FAILURE:

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 // Protected Route with token
 import PrivateRoute from './utils/PrivateRoute';
@@ -26,10 +26,7 @@ export default function App(props) {
     <main>
 
         {/* This should redirect the user if they have their token already from loggin in. */}
-      {     
-      localStorage.getItem('token') ? <Redirect to={`/dashboard/${localStorage.getItem('id')}`} /> : null
-      }
-
+      
       
       <Nav />
     

@@ -1,85 +1,92 @@
-import React, {useEffect} from 'react';
-
-import { getPlant } from '../store/actions';
-
-import {useDispatch} from 'react-redux'
+import React, {useEffect, useState} from 'react';
 
 
+import {useDispatch, useSelector} from 'react-redux'
+import {useParams} from 'react-router-dom'
 
 
-const UpdatePlant = () => {
+
+import { editPlant } from '../store/actions';
+
+
+
+const UpdatePlant = ({props, }) => {
 
     const dispatch = useDispatch();
-    
-    
 
-    // const [plant, setPlant] = useState({
-    //     id: params.id, 
-    //     nickname: '',
-    //     species: '',
-    //     h2o_frequency:'',
-    //     image:'',
-    //     user_id: params.id
-    // })
+    const plants = useSelector(state => state.plantList);
+    const {id} = useParams();
 
-    useEffect(() => {
-        dispatch(getPlant())
+    const [plant, setPlant] = useState({
+        nickname: '',
+        species: '',
+        h2o_frequency: '',
+        image: '',
+        user_id: ''
+
+    })
         
-    }, [dispatch])
+    useEffect(() => {
+     setPlant({...plants.filter(plant => plant.id == id)[0]})},[plant.id, id, plants]
+     
+     
+    )
 
-    const submitHandler = (event) => {
-        event.preventDefault();
-        dispatch()
+
+    const inputChange = (e) => {
+        e.preventDefault()
+        setPlant({
+          ...plant, 
+          [e.target.name]: e.target.value
+        })
     }
 
-    
-    return(
-        <>
-            <form onSubmit={submitHandler} className="form">
-                <h3>Edit Plant</h3>
-                {}
+     const handleSubmit = e =>  {
+         e.preventDefault();
+        dispatch(editPlant(plant))
+        console.log('submitted', plant);
+        
+     }
 
-             
-            </form></>
-    )
-}
+     console.log(plant);
+     
+    return(
+        <div>
+           
+        <form onSubmit={handleSubmit} className='editform' >
+        
+
+        <input className='editInput'
+            type="text"
+            name="nickname"
+            placeholder="Nickname"
+            value={plant.nickname}
+            onChange={inputChange}
+            required
+        />
+        <input className='editInput'
+            type="text"
+            name="species"
+            placeholder="Species"
+            value={plant.species}
+            onChange={inputChange}
+            required
+        />
+        <input className='editInput'
+            type="text"
+            value={plant.h2o_frequency}
+            name="h2o_frequency"
+            placeholder="h2o Frequency"
+            onChange={inputChange}
+            required
+        />
+        <button id="editBtn">Edit Plant</button>
+        </form>
+        </div>
+    )}
+    
+    
+
 
 export default UpdatePlant;
 
-// {/* <div className="input-container">
-// {/* Name of plant input */}
-// <div>
-//     <h4 htmlFor="nickname">
-//     Nickname: <input
-//     type="text"
-//     value={plant.nickname}
-//     onChange={event =>setPlant({...plant, [event.target.name]:event.target.value})}
-//     name="nickname" required/>
-
-//     </h4>
-    
-// </div>
-
-// {/* Species of plant input */}
-
-// <div>
-//     <h4 htmlFor="species">Species: </h4>
-//     <input
-//         type="text"
-//         value={plant.species}
-//         onChange={event =>setPlant({...plant, [event.target.name]:event.target.value})}
-//         name="species"
-//     />
-// </div>
-
-// {/* H2oFrequency of plant */}
-// <div>
-//     <h4 htmlFor="h2o_frequency">H2o Frequency: </h4>
-//     <input
-//         type="text"
-//         value={plant.h2o_frequency}
-//         onChange={event =>setPlant({...plant, [event.target.name]:event.target.value})}
-//         name="h2o_frequency"
-//     />
-// </div>
-// </div> */}
