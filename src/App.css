@@ -103,11 +103,16 @@
   font-size: 40px;
 }
 
+/* NAVIGATION */
+
+
+
+
 /* DRAWER IN DASHBOARD */
 
 #dashBg{
   background-color: rgb(240, 240, 240);
-  height: 800px;
+ 
 }
 
 .drawer {
@@ -126,6 +131,7 @@
   margin-top: 1%;
 
 }
+
 
 /* HAMBURGERRRRR */
 
@@ -169,6 +175,9 @@
 }
 
 /* HAMBURGERRRRR */
+
+
+/* RESPONSIVE DESIGN BELOW */
 
 @media only screen and (max-width: 1600px){
   #navBtn {
@@ -375,6 +384,13 @@
 
 
 @media only screen and (max-width: 580px){
+
+  #dashBg{
+    background-color: rgb(240, 240, 240);
+    margin-top: 10vh;
+    height: 800px;
+  }
+
   #navBtn {
     padding-left: 50px;
     padding-top: 30px;

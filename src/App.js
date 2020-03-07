@@ -16,7 +16,7 @@ import AddPlant from './components/AddPlant';
 // import PlantCard from './components/PlantCard';
 import UpdatePlant from './components/UpdatePlant';
 
-
+import Drawer from './components/Drawer'
 
 export default function App(props) {
 
@@ -25,12 +25,12 @@ export default function App(props) {
   return (
     <main>
 
-        {/* This should redirect the user if they have their token already from loggin in. */}
+        
       
       
       <Nav />
+      
     
-
       <Switch>
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
