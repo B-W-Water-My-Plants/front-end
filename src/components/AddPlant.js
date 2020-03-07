@@ -12,25 +12,28 @@ import { addPlant } from "../store/actions";
 
 // Form
 const StyledContainer = styled.div`
-    border:2px solid #97C6A5;
+    width: 60%;
+    border:2px solid #7D695F;
     text-align:center;
     border-radius:10px;
     padding:10px;
-    margin-left 15px;
-    margin-right 20px;
-    margin-top: 20%;
+    margin-left 25%;
+    margin-right 25%;
+    margin-top: 5%;
     color:black;
     background:#E8DEBD;
-    padding:2%;
+    
+    
 `;
 
 const StyledInputContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-left: 2%;
+    align-content: center;
+    padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
+    padding-bottom: 3%;
 `;
 
 const StyledH1 = styled.h1`
@@ -94,6 +97,7 @@ const StyledCancelbtn = styled.button`
 const StyledBtnDiv = styled.div`
     margin-left: 115px;
 `;
+
 
 
 const AddPlant = props => {
