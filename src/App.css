@@ -70,7 +70,7 @@
   width: 100px;
   height: 100px;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 
@@ -83,10 +83,13 @@
   padding-left: 200px;
   padding-top: 30px;
   width: 30%;
+  
 }
 
 #navBtns{
   margin: 10px;
+  background-color: #E8DEBD;
+  border: 1px solid #7D695F;
 }
 
 .header {
@@ -133,7 +136,7 @@
   width: 100%;
   background-color: rgba(151, 198, 165, 0.8);
   height: 50px;
-  
+  margin-bottom:13.2%;
 }
 
 .hamBtn{
@@ -522,3 +525,25 @@
   }
 
 }
+
+button {
+    color: black;
+    background: #97C6A5;
+    border: 1px solid #7D695F;
+    font-size: 13px;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.ant-btn>a:only-child {
+  color: ;
+}
+
