@@ -32,15 +32,19 @@ const Dashboard = (props) => {
     }, [dispatch])
 
     const Plants = styled.div`
+    background:#E8DEBD;
     display: flex;
-    align-self: auto;
+    align-self: center;
     justify-content: space-around;
     margin-top: 20px;
     width: 60%;
     margin: auto;
     margin-top: 30px;
     height: auto;
-    
+    border-radius: 10px;
+    border:2px solid #7D695F;
+    padding: 20px;
+    text-align: center;
     `;
 
   
