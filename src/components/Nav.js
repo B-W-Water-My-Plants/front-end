@@ -5,7 +5,7 @@ import {  Button } from 'antd';
 
 import {useHistory} from 'react-router-dom'
 
-import Drawer from './Drawer';
+import Drawer from './Drawer'
 
 
 const Navigation = () => {
@@ -15,7 +15,7 @@ const Navigation = () => {
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user_id')
-    history.push('/login');
+    history.push('/');
 
   }
   return (
@@ -23,7 +23,9 @@ const Navigation = () => {
     <nav id='navigation'>
         
           <div id='logoWrap'>
+            <a href='https://watermyplantsui.netlify.com/'>
             <img id='logopic' src={Image} alt='logo' />
+            </a>
           </div>
         
         
@@ -39,8 +41,14 @@ const Navigation = () => {
  
         </div>
         )}
+       
+        
     </nav>
-    <Drawer />
+
+    {localStorage.getItem('token') && (
+      <Drawer />
+      )}
+    
     </>
   );
 };

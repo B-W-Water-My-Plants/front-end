@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 
 import { addPlant } from "../store/actions";
 
+import {Icon} from 'antd';
 
 
 
@@ -130,9 +131,9 @@ const AddPlant = props => {
 
     return (
       <>
-      
+      <div id="addForm">
         <StyledContainer>
-            <form onSubmit={submitHandler} className="form">
+            <form onSubmit={submitHandler}>
                 <StyledH1>Add Plant</StyledH1>
 
                 <StyledInputContainer className="input-container">
@@ -174,10 +175,11 @@ const AddPlant = props => {
             </form>
 
             <StyledBtnDiv>
+                <StyledAddbtn onClick={submitHandler}><Icon id="arrowDown" type="PlusOutlined" theme="Outlined" />Add</StyledAddbtn>
                 <StyledCancelbtn>Cancel</StyledCancelbtn>
-                <StyledAddbtn onClick={submitHandler}>Add</StyledAddbtn>
             </StyledBtnDiv>
         </StyledContainer>
+        </div>
         </>
     );
 

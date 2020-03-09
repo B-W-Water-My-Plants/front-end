@@ -1,28 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
  
+import {Link} from 'react-router-dom';
 
-import {getPlants} from '../store/actions/index'
-
+//REDUX
 import { useSelector, useDispatch} from 'react-redux'
-
-
-import {Link, useParams} from 'react-router-dom';
-
-
+import {getPlants} from '../store/actions/index'
 import {deletePlant} from '../store/actions/index';
-import styled from 'styled-components';
+
+
+import { Card,Button} from 'antd';
 
 
 const Dashboard = (props) => {    
 
     const dispatch = useDispatch();
-    const plants = useSelector(state => state.plantList);
-    // const {id} = useParams();
-  
-    console.log(plants);
-   
 
-    
+    //Plant State
+    const plants = useSelector(state => state.plantList);
+
+
 
     // MVP for React 1
     useEffect(()=> {
@@ -31,43 +27,19 @@ const Dashboard = (props) => {
         
     }, [dispatch])
 
-    const Plants = styled.div`
-    background:#E8DEBD;
-    display: flex;
-    align-self: center;
-    justify-content: space-around;
-    margin-top: 20px;
-    width: 50%;
-    margin: auto;
-    margin-top: 30px;
-    height: auto;
-    border-radius: 10px;
-    border:2px solid #7D695F;
-    padding: 30px;
-    text-align: center;
-    margin-bottom: 5%;
-    `;
 
   
    
     return(
         <section id="dashBg">
           
-            
+            <div id='plantCardBg'>
             
             {plants.map(plant  => 
           
-                <div>
-                {/* <PlantCard 
-                    key={plants.id}
-                    id={plants.id}
-                    nickname = { plants.nickname }
-                    species = { plants.species }
-                    image = { plants.image } 
-                    h2o={plants.h2o_frequency}
-                    
-                />    */}
-                <Plants>
+                <div id="plantCard">
+               
+                <Card>
                 <div key={plant.id}>
                 <p>Nickname: {plant.nickname}</p>
                 <p>Species: {plant.species}</p>
@@ -76,17 +48,18 @@ const Dashboard = (props) => {
                 
 
                 <div>
-                    <button onClick={() => {dispatch(deletePlant(plant.id));}}>Delete</button> 
 
-                    <Link to={`/editplant/${plant.id}`}><button id="btnEdit">Edit</button></Link>
+                    <Link to={`/editplant/${plant.id}`}><Button id="btnEdit">Edit</Button></Link>
+
+                    <Button type='danger'  htmlType='submit' onClick={() => {dispatch(deletePlant(plant.id));}}>Delete</Button> 
                     
                 </div>
                 </div>
-                </Plants>
-                </div>
+                </Card>
+                </div>  
                 
                 )}
-                
+                </div>
         </section>
     )
     
