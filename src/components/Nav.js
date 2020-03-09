@@ -23,7 +23,9 @@ const Navigation = () => {
     <nav id='navigation'>
         
           <div id='logoWrap'>
+            <a href='https://watermyplantsui.netlify.com/'>
             <img id='logopic' src={Image} alt='logo' />
+            </a>
           </div>
         
         
