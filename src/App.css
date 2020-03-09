@@ -70,8 +70,9 @@
   width: 100px;
   height: 100px;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
+
 
 
 #logoWrap{
@@ -83,10 +84,13 @@
   padding-left: 200px;
   padding-top: 30px;
   width: 30%;
+  
 }
 
 #navBtns{
   margin: 10px;
+  background-color: #E8DEBD;
+  border: 1px solid #7D695F;
 }
 
 .header {
@@ -106,12 +110,25 @@
 /* NAVIGATION */
 
 
+#plantCard {
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  
+}
 
+#plantCardBg{
+  width:100%;
+  display: flex;
+  flex-flow: row wrap;
+}
 
 /* DRAWER IN DASHBOARD */
 
 #dashBg{
-  background-color: rgb(240, 240, 240);
+  background-image: url(./img/cactus-2117102_1920.jpg);
+  background-size: cover;
+  height: 120vh;
  
 }
 
@@ -176,8 +193,100 @@
 
 /* HAMBURGERRRRR */
 
+/* SIGN IN FORM & SIGN UP */
+
+.loginbg{
+  height: 120vh;
+  width: 100%;
+  background-image: url('./img/close-up-photo-of-green-leafed-plant-1407305.jpg');
+  background-size: cover;
+}
+
+#styledSignInButton{
+  width: 80%;
+  font-family: "Roboto";
+  color: #000000;
+  border-radius: 3px;
+  font-size: 1rem;
+  background: #97C6A5;
+  padding: 8px 0 8px 0;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+#signCard{
+  border-radius: 4px;
+  width: 50rem;
+  margin-left: 33%;
+  margin-top: 50px;
+  padding: 10px;
+  background-color: white;
+  
+}
+
+.signUpBtn{
+  width: 80%;
+  height: 30px;
+  background-color: #97C6A5;
+  color: black;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  margin-left: 80px;
+  font-size: 15px;
+}
+
+
+/* EDIT FORM */
+
+#updateFrm{
+  margin-left: 20%;
+}
 
 /* RESPONSIVE DESIGN BELOW */
+
+@media only screen and (max-width: 2500px){
+
+  #navBtn {
+    padding-left: 250px;
+    padding-top: 30px;
+    width: 30%;
+  }
+
+  #H1SignIn {
+    width: 100%;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 30px;
+    font-family: Amatic SC;
+    font-size: 40px;
+  }
+
+  .loginCard{
+    background: white;
+    border-radius: 3px;
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  #signCard{
+    border-radius: 4px;
+    width: 50rem;
+    margin: auto;
+    margin-top: 10%;
+    background-color: white;
+    
+  }
+
+  
+
+}
 
 @media only screen and (max-width: 1600px){
   #navBtn {
@@ -188,10 +297,22 @@
 
   #H1SignIn {
     width: 100%;
-    margin-left: 210px;
+    margin-left: 100px;
     margin-top: 30px;
     font-family: Amatic SC;
     font-size: 40px;
+  }
+
+  .loginCard{
+    background: white;
+    border-radius: 3px;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
   }
  
 
@@ -226,6 +347,16 @@
     width: 30%;
   }
 
+  #signCard{
+    border-radius: 4px;
+    width: 40rem;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: white;
+    
+  }
+
 }
 
 @media only screen and (max-width: 1200px){
@@ -237,7 +368,7 @@
 
   #H1SignIn {
     width: 100%;
-    margin-left: 150px;
+    margin-left: 60px;
     margin-top: 30px;
     font-family: Amatic SC;
     font-size: 40px;
@@ -265,6 +396,17 @@
     
   }
 
+  .signUpBtn{
+    width: 70%;
+    height: 30px;
+    background-color: #97C6A5;
+    color: black;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    font-size: 15px;
+  }
+
 
 
 }
@@ -289,7 +431,8 @@
   #H1SignIn {
     text-align: center;
     font-family: Amatic SC;
-    font-size: 34px;
+    margin-left: 40px;
+    
   }
 
 }
@@ -324,6 +467,22 @@
     font-size: 44px;
     margin-left:30px;
     
+  }
+
+  #updateFrm{
+    margin-left: 20%;
+    margin-top: 15%;
+  }
+
+  #plantCardBg{
+    margin-top: 100px;
+  }
+
+  #page-nav {
+    width: 100%;
+    background-color: rgba(151, 198, 165, 0.8);
+    height: 50px;
+    margin-bottom: 30px;
   }
 
   
@@ -361,7 +520,9 @@
 
 }
 
-@media only screen and (max-width: 640px){
+/* IPHONE 7 and below */
+
+@media only screen and (max-width: 650px){
   #navBtn {
     padding-left: 60px;
     padding-top: 30px;
@@ -376,8 +537,19 @@
   #H1SignIn {
     text-align: center;
     font-family: Amatic SC;
-    font-size: 28px;
+    font-size: 40px;
   }
+
+  #signCard{
+    border-radius: 4px;
+    width: 30rem;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: white;
+    
+  }
+
 
 
 }
@@ -397,17 +569,53 @@
     padding-right: 10px;
     width: 30%;
   }
+  
+  #H1SignIn {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 32px;
+  }
 
   #navBtns{
     margin: 1px;
   }
 
-  #H1SignIn {
-    text-align: center;
-    font-family: Amatic SC;
-    font-size: 26px;
-    margin-left: 30px;
+  #updateFrm{
+    margin-top: 25%;
+    margin-left: 5%;
   }
+
+  .loginCard{
+    background: white;
+    border-radius: 3px;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  #dashBg{
+    height: 100%;
+    width: 100%;
+  }
+
+  #plantCard {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    
+  }
+  
+  #plantCardBg{
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+ 
 
   .addHeader{
     text-align: center;
@@ -434,9 +642,78 @@
   #H1SignIn {
     text-align: center;
     font-family: Amatic SC;
-    font-size: 24px;
+    font-size: 25px;
     margin-left: 26px;
   }
+
+  .loginCard{
+    background: white;
+    border-radius: 3px;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  #styledSignInButton{
+    width: 60%;
+    font-family: "Roboto";
+    color: #000000;
+    border-radius: 3px;
+    font-size: 1rem;
+    background: #97C6A5;
+    padding: 8px 0 8px 0;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 60px;
+  }
+
+  #dashBg{
+    height: 100%;
+  }
+
+  #plantCard {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    
+  }
+  
+  #plantCardBg{
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  #signCard{
+    border-radius: 4px;
+    width: 20rem;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: white;
+    
+  }
+
+  .signUpBtn{
+    width: 70%;
+    height: 30px;
+    background-color: #97C6A5;
+    color: black;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    font-size: 15px;
+  }
+
+  #addForm{
+    margin-top: 25%;
+  }
+
 
   .addHeader{
     text-align: center;
@@ -450,6 +727,8 @@
 
 }
 
+
+/* IPHONE 6/7/8 */
 @media only screen and (max-width: 380px){
   #navBtn {
     padding-left: 25px;
@@ -467,14 +746,57 @@
     
   }
 
+  .loginCard{
+    background: white;
+    border-radius: 3px;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  #styledSignInButton{
+    width: 60%;
+    font-family: "Roboto";
+    color: #000000;
+    border-radius: 3px;
+    font-size: 1rem;
+    background: #97C6A5;
+    padding: 8px 0 8px 0;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 60px;
+  }
+  
+
   #H1SignIn {
     text-align: center;
     font-family: Amatic SC;
-    font-size: 20px;
+    font-size: 24px;
     margin-left: 10px;
     margin-top: 40px;
   }
 
+  #dashBg{
+    height: 100%;
+  }
+
+  #plantCard {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    
+  }
+  
+  #plantCardBg{
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
   
 
   .addHeader{
@@ -485,6 +807,9 @@
 
   #page-nav ul li {
     margin-right: 10px;
+  }
+  #addForm{
+    margin-top: 28%;
   }
 
 }
@@ -503,9 +828,60 @@
     margin-top: 10px;
   }
 
+  #updateFrm{
+    margin-top: 30%;
+  }
+
   #navBtns{
     margin-right: 10px;
     
+  }
+
+  .loginCard{
+    background: white;
+    border-radius: 3px;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  #styledSignInButton{
+    width: 50%;
+    font-family: "Roboto";
+    color: #000000;
+    border-radius: 3px;
+    font-size: 1rem;
+    background: #97C6A5;
+    padding: 8px 0 8px 0;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 60px;
+  }
+
+  #signCard{
+    border-radius: 4px;
+    width: 19rem;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: white;
+    
+  }
+
+  .signUpBtn{
+    width: 40%;
+    height: 30px;
+    background-color: #97C6A5;
+    color: black;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    font-size: 15px;
   }
 
   #H1SignIn {
@@ -517,6 +893,23 @@
     margin-top: 20px;
   }
 
+  #dashBg{
+    height: 100%;
+    width: 100%;
+  }
+
+  #plantCard {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    
+  }
+  
+  #plantCardBg{
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
   
 
   .addHeader{
@@ -537,4 +930,26 @@
     margin-right: 10px;
   }
 
+  #addForm{
+    margin-top: 28%;
+  }
+
 }
+
+button {
+    color: black;
+    background: #97C6A5;
+    border: 1px solid #7D695F;
+    font-size: 13px;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+

@@ -8,6 +8,8 @@ import {useParams} from 'react-router-dom'
 
 import { editPlant } from '../store/actions';
 
+import {Form} from 'antd'
+
 
 
 const UpdatePlant = ({props, }) => {
@@ -52,8 +54,10 @@ const UpdatePlant = ({props, }) => {
      
     return(
         <div>
+        <div id='updateFrm'>
            
-        <form onSubmit={handleSubmit} className='editform' >
+        
+        <Form onSubmit={handleSubmit} className='editform' >
         
 
         <input className='editInput'
@@ -81,7 +85,8 @@ const UpdatePlant = ({props, }) => {
             required
         />
         <button id="editBtn">Edit Plant</button>
-        </form>
+        </Form>
+        </div>
         </div>
     )}
     

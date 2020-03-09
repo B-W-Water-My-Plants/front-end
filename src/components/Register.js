@@ -11,18 +11,7 @@ import { useHistory } from 'react-router-dom';
 //Components
 
 
-const StyledFieldset = styled.fieldset`
-  border-radius: 4px;
-  border: 0 solid white;
-  width: 23rem;
-  margin: 0 auto;
-  background-color: white;
-  padding-top: 0;
-  margin-top: 8%;
-  margin-bottom: 10%;
-  padding-left: 0%;
-  padding-right: 0;
-`;
+
 
 
 const StyledH2 = styled.h2`
@@ -62,16 +51,6 @@ const StyledLabel = styled.label`
   text-align: left;
 `;
 
-const StyledButton = styled.button`
-  width: 200px;
-  height: 30px;
-  background-color: #97C6A5;
-  color: black;
-  border-radius: 2px;
-  margin-bottom: 10px;
-  margin-left: 80px;
-  font-size: 15px;
-`;
 
 const RegisterFooterDiv = styled.div`
     border-top: 1px solid black;
@@ -112,11 +91,13 @@ const Register = () => {
     };
 
     return (
-        <div>
-            {/* <form onSubmit={event => handleSubmit(event)}> */}
-            {/* <Header /> */}
-            <form onSubmit={handleSubmit}>
-                <StyledFieldset>
+        <div className='loginbg'>   
+            <div>
+            <div>>
+            <div id='signCard'>
+
+                <form  onSubmit={handleSubmit}>
+
                     
                     <StyledH2>Sign up</StyledH2>
                     <StyledInputDiv>
@@ -139,18 +120,8 @@ const Register = () => {
                             onChange={handleChange} required
                         />
                     </StyledInputDiv>
-
-                    {/* <StyledInputDiv>
-                        <StyledLabel>Phone number</StyledLabel>
-                        <StyledInput
-                            type="phone number"
-                            name="phone"
-                            value={newUser.phone}
-                            onChange={handleChange}
-                        />
-                    </StyledInputDiv> */}
-
-                    <StyledButton>Sign Up</StyledButton>
+                </form>
+                    <button className='signUpBtn'>Sign Up</button>
 
                     <RegisterFooterDiv>
                         <input type="checkbox" required />
@@ -161,8 +132,9 @@ const Register = () => {
                             Got accout? <Link to='/login'>Sign in</Link>
                         </StyledP>
                     </div>
-                </StyledFieldset>
-            </form>
+           </div>
+        </div>
+        </div>
         </div>
     ); 
 }

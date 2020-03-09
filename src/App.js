@@ -16,7 +16,6 @@ import AddPlant from './components/AddPlant';
 // import PlantCard from './components/PlantCard';
 import UpdatePlant from './components/UpdatePlant';
 
-import Drawer from './components/Drawer'
 
 export default function App(props) {
 

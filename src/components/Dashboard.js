@@ -7,8 +7,8 @@ import { useSelector, useDispatch} from 'react-redux'
 import {getPlants} from '../store/actions/index'
 import {deletePlant} from '../store/actions/index';
 
-import styled from 'styled-components';
-import {Card, Button} from 'antd';
+
+import { Card,Button} from 'antd';
 
 
 const Dashboard = (props) => {    
@@ -27,30 +27,19 @@ const Dashboard = (props) => {
         
     }, [dispatch])
 
-    const Plants = styled.div`
-    display: flex;
-    align-self: auto;
-    justify-content: space-around;
-    margin-top: 20px;
-    width: 60%;
-    margin: auto;
-    margin-top: 30px;
-    height: auto;
-    background-color: rgba(151, 198, 165, 0.6);
-    `;
 
   
    
     return(
         <section id="dashBg">
           
-            
+            <div id='plantCardBg'>
             
             {plants.map(plant  => 
           
-                <div>
+                <div id="plantCard">
                
-                <Card id="plantCard">
+                <Card>
                 <div key={plant.id}>
                 <p>Nickname: {plant.nickname}</p>
                 <p>Species: {plant.species}</p>
@@ -60,9 +49,9 @@ const Dashboard = (props) => {
 
                 <div>
 
-                    <Link to={`/editplant/${plant.id}`}><button id="btnEdit">Edit</button></Link>
+                    <Link to={`/editplant/${plant.id}`}><Button id="btnEdit">Edit</Button></Link>
 
-                    <Button htmlType='submit' onClick={() => {dispatch(deletePlant(plant.id));}}>Delete</Button> 
+                    <Button type='danger'  htmlType='submit' onClick={() => {dispatch(deletePlant(plant.id));}}>Delete</Button> 
                     
                 </div>
                 </div>
@@ -70,7 +59,7 @@ const Dashboard = (props) => {
                 </div>  
                 
                 )}
-                
+                </div>
         </section>
     )
     

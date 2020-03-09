@@ -13,18 +13,7 @@ import { loginUser } from '../store/actions/index';
 
 
 
-const LoginCard = styled.div`
-  background: white;
-  border-radius: 3px;
-  width: 23rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  color: #7D695F;
-  margin-top: 10%;
-  margin-bottom: 10%;
-`;
+
 
 const H1SignIn = styled.div`
   color: rgb(11, 139, 139);
@@ -43,19 +32,6 @@ const UsernameAndPassword = styled.div`
   padding-right:5%;
 `;
 
-const StyledSignInButton = styled.button`
-  width: 65%;
-  font-family: "Roboto";
-  color: #000000;
-  border-radius: 3px;
-  font-size: 1rem;
-  background: #97C6A5;
-  padding: 8px 0 8px 0;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 20px;
-  margin-left: 60px;
-`;
 
 const BottomSignIn = styled.div`
   display: flex;
@@ -120,17 +96,18 @@ const Login = (props) => {
   }
 
   return (
-    <>
-      {/* <Header /> */}
-        <LoginCard>
+  
+      <div className='loginbg'>
+        <div>>
+        <div className='loginCard'>
             
             <form onSubmit={submitHandler}>
                 <H1SignIn>Sign in</H1SignIn>
                 <br />
                 <UsernameAndPassword>
                     <label>
-                        Username
-            <br />
+                        
+                        <br />
                         <StyledInput
                             type="text"
                             name="username"
@@ -143,8 +120,8 @@ const Login = (props) => {
                 </UsernameAndPassword>
                 <UsernameAndPassword>
                     <label>
-                        Password
-            <br />
+                        
+                    <br />
                         <StyledInput
                             type="password"
                             name="password"
@@ -157,14 +134,16 @@ const Login = (props) => {
                     <Forgot>Forgot your password?</Forgot>
                     <br />
                 </UsernameAndPassword>
-                <StyledSignInButton>Sign In</StyledSignInButton>
+                <button id='styledSignInButton'>Sign In</button>
             </form>
             <BottomSignIn>
                 <Need>Need an account?</Need>
                 <SignUp><Link to='/signup'>Sign up</Link></SignUp>
             </BottomSignIn>
-        </LoginCard>
-        </>
+        </div>
+        </div>
+        </div>
+        
     );
 };
 
