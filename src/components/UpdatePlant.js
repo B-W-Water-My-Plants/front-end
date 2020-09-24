@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 
 import {useDispatch, useSelector} from 'react-redux'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory } from 'react-router-dom'
 
 
 
@@ -15,6 +15,7 @@ import {Form} from 'antd'
 const UpdatePlant = ({props, }) => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const plants = useSelector(state => state.plantList);
     const {id} = useParams();
@@ -43,14 +44,19 @@ const UpdatePlant = ({props, }) => {
         })
     }
 
-     const handleSubmit = e =>  {
-         e.preventDefault();
+    const handleSubmit = e =>  {
+        e.preventDefault();
         dispatch(editPlant(plant))
+        history.push(`/dashboard/${id}`)
         console.log('submitted', plant);
         
-     }
+    }
 
-     console.log(plant);
+    const cancelClick = () => {
+        history.push(`/dashboard/${id}`)
+    }
+
+    
      
     return(
         <div>
@@ -85,6 +91,7 @@ const UpdatePlant = ({props, }) => {
             required
         />
         <button id="editBtn">Edit Plant</button>
+        <button onClick={cancelClick}>Cancel</button>
         </Form>
         </div>
         </div>

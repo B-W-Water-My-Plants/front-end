@@ -22,7 +22,7 @@ export default function App(props) {
   
   
   return (
-    <main>
+    <div>
 
         
       
@@ -43,6 +43,6 @@ export default function App(props) {
       
       <PrivateRoute exact path='/editplant/:id' component={UpdatePlant} />
       </Switch>
-    </main>
+    </div>
   );
 }

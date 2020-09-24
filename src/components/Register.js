@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { registerUser } from '../store/actions/index';
 
 import styled from "styled-components";
-import { useHistory } from 'react-router-dom';
+
 
 //Components
 
@@ -52,20 +52,20 @@ const StyledLabel = styled.label`
 `;
 
 
-const RegisterFooterDiv = styled.div`
-    border-top: 1px solid black;
-    margin: 0 auto;
-    margin-top: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
+// const RegisterFooterDiv = styled.div`
+//     border-top: 1px solid black;
+//     margin: 0 auto;
+//     margin-top: 2%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// `;
 
 
-const Register = () => {
+const Register = (props) => {
     // console.log("props in register", props);
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
 
     const [user, setUser] = useState({
         username: "",
@@ -75,13 +75,13 @@ const Register = () => {
     const handleSubmit = (event) => {
         console.log("NewUser in handle", user);
         event.preventDefault();
-        dispatch(registerUser(user));
+        dispatch(registerUser(user, props));
         setUser({
             username: '',
             password: ''
         })
         console.log(user)
-        history.push('/dashboard')
+        
        
     }
 
@@ -93,7 +93,7 @@ const Register = () => {
     return (
         <div className='loginbg'>   
             <div>
-            <div>>
+            <div>
             <div id='signCard'>
 
                 <form  onSubmit={handleSubmit}>
@@ -120,13 +120,11 @@ const Register = () => {
                             onChange={handleChange} required
                         />
                     </StyledInputDiv>
+                    <button className='styledSignInButton'>Sign Up</button>
                 </form>
-                    <button className='signUpBtn'>Sign Up</button>
+                    
 
-                    <RegisterFooterDiv>
-                        <input type="checkbox" required />
-                        <StyledP> I accept terms of service available here.</StyledP>
-                    </RegisterFooterDiv>
+                
                     <div>
                         <StyledP>
                             Got accout? <Link to='/login'>Sign in</Link>

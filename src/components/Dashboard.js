@@ -37,10 +37,10 @@ const Dashboard = (props) => {
             
             {plants.map(plant  => 
           
-                <div id="plantCard">
+                <div key={plant.id} id="plantCard">
                
                 <Card>
-                <div key={plant.id}>
+                <div>
                 <p>Nickname: {plant.nickname}</p>
                 <p>Species: {plant.species}</p>
                 <p>H2o Frequency: {plant.h2o_frequency}</p>

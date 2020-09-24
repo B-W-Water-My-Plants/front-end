@@ -36,12 +36,14 @@ export const REGISTER_START = 'REGISTER_START'
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
 
-export const registerUser = (user) => dispatch => {
+export const registerUser = (user, props) => dispatch => {
     dispatch({ type: REGISTER_START })
 
     axiosWithAuth().post('/auth/register', user)
     .then(res => {
+        console.log(res);
         dispatch({ type: REGISTER_SUCCESS, payload: res.data })
+        props.history.push(`/dashboard/${res.data.id}`)
         
     })
     .catch(err =>
@@ -139,7 +141,7 @@ export const EDIT_PLANT_REQUEST = "EDIT_PLANT_REQUEST";
 export const EDIT_PLANT_SUCCESS = "EDIT_PLANT_SUCCESS";
 export const EDIT_PLANT_FAILURE = "EDIT_PLANT_FAILURE";
 
-export const editPlant = (plant) => dispatch => {
+export const editPlant = (plant, props) => dispatch => {
     dispatch({type: EDIT_PLANT_REQUEST});
 
     const id = localStorage.getItem('user_id');
@@ -149,8 +151,10 @@ export const editPlant = (plant) => dispatch => {
     .then(res => {
         dispatch({type: EDIT_PLANT_SUCCESS, payload: res.data})
         console.log(res.data);
+        props.history.push(`/dashboard/${res.data.id}`)
         
     })
+    .catch(err => dispatch({ type: EDIT_PLANT_FAILURE }))
      
 
 

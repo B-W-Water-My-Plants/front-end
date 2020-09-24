@@ -86,7 +86,6 @@ const Login = (props) => {
       username:'',
       password: '',
     })
-    props.history.push('/dashboard');
     
   }
 
@@ -98,7 +97,7 @@ const Login = (props) => {
   return (
   
       <div className='loginbg'>
-        <div>>
+        <div>
         <div className='loginCard'>
             
             <form onSubmit={submitHandler}>
@@ -134,7 +133,7 @@ const Login = (props) => {
                     <Forgot>Forgot your password?</Forgot>
                     <br />
                 </UsernameAndPassword>
-                <button id='styledSignInButton'>Sign In</button>
+                <button className='styledSignInButton'>Sign In</button>
             </form>
             <BottomSignIn>
                 <Need>Need an account?</Need>
