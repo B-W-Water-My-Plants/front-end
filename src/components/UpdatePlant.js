@@ -30,7 +30,7 @@ const UpdatePlant = ({props, }) => {
     })
         
     useEffect(() => {
-     setPlant({...plants.filter(plant => plant.id == id)[0]})},[plant.id, id, plants]
+     setPlant({...plants.filter(plant => plant.id === id)[0]})},[plant.id, id, plants]
      
      
     )
